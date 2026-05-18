@@ -580,7 +580,7 @@ const BANK = {
   { "q": "Primary Key berfungsi untuk...", "opts": ["Menghubungkan tabel", "Menyimpan data", "Mengidentifikasi data secara unik", "Menghapus data", "Menyaring data"], "ans": 2, "exp": "Primary Key adalah sebuah kolom atau kombinasi kolom yang nilainya bersifat unik untuk mengidentifikasi setiap baris data secara spesifik dalam sebuah tabel." },
   { "q": "Foreign Key digunakan untuk...", "opts": ["Menghapus data", "Menghubungkan antar tabel", "Menambah data", "Mengurutkan data", "Menyaring data"], "ans": 1, "exp": "Foreign Key (kunci sandang) adalah kolom yang merujuk pada Primary Key tabel lain, berfungsi untuk membangun hubungan (relasi) antar tabel." },
   { "q": "HTML merupakan singkatan dari...", "opts": ["Hyperlinks Text Markup Language", "Hyper Text Markup Language", "High Text Markup Language", "Hyper Tool Markup Language", "Home Text Markup Language"], "ans": 1, "exp": "HTML singkatan dari Hyper Text Markup Language, bahasa markup standar yang digunakan untuk membuat dan menyusun struktur halaman web." },
-  { "q": "Tag dasar untuk membuat dokumen HTML adalah...", "opts": ["<body>", "<head>", "<html>", "<title>", "<meta>"], "ans": 2, "exp": "Tag <html> adalah tag utama atau root element yang membungkus seluruh konten dokumen HTML dari awal hingga akhir." },
+  { "q": "Tag dasar untuk membuat dokumen HTML adalah...", "opts": ["body", "<head>", "<html>", "<title>", "<meta>"], "ans": 2, "exp": "Tag <html> adalah tag utama atau root element yang membungkus seluruh konten dokumen HTML dari awal hingga akhir." },
   { "q": "Tag yang digunakan untuk membuat paragraf adalah...", "opts": ["<p>", "<par>", "<pg>", "<text>", "<br>"], "ans": 0, "exp": "Tag <p> digunakan untuk mendefinisikan sebuah paragraf atau teks blok dalam dokumen HTML." },
   { "q": "Tag untuk membuat judul terbesar adalah...", "opts": ["<h6>", "<heading>", "<head>", "<h1>", "<title>"], "ans": 3, "exp": "HTML menyediakan heading dari <h1> hingga <h6>, di mana tag <h1> menghasilkan ukuran teks judul paling besar dan utama." },
   { "q": "Tag untuk membuat garis baru adalah...", "opts": ["<line>", "<break>", "<br>", "<hr>", "<new>"], "ans": 2, "exp": "Tag <br> singkatan dari Line Break, digunakan untuk membuat baris baru (pindah baris) tanpa memberikan spasi tambahan antar paragraf." },
@@ -679,7 +679,7 @@ let wrongCount = 0;
 let answered = false;
 let streak = 0;
 let currentSubject = '';
-const MAX_LIVES = 3;
+const MAX_LIVES = 100;
 
 const SUBJECT_NAMES = { pkn: 'PKn', bindo: 'Bahasa Indonesia', sejarah: 'Sejarah', all: 'Mode Campuran 🔥' };
 
