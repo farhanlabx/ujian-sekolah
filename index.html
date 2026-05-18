@@ -427,23 +427,23 @@
 
   <div class="subjects-grid">
     <div class="subject-card" onclick="startQuiz('pkn')">
-      <span class="subject-badge">60 Soal</span>
-      <span class="subject-emoji">🏛️</span>
-      <div class="subject-name">PKn <span class="subject-arrow">→</span></div>
-      <div class="subject-count">Keberagaman & Sistem Pemerintahan</div>
+      <span class="subject-badge">50 Soal</span>
+      <span class="subject-emoji">💻</span>
+      <div class="subject-name">RPL <span class="subject-arrow">→</span></div>
+      <div class="subject-count"></div>
     </div>
     <div class="subject-card" onclick="startQuiz('bindo')">
-      <span class="subject-badge">21 Topik</span>
-      <span class="subject-emoji">📖</span>
-      <div class="subject-name">Bahasa Indonesia <span class="subject-arrow">→</span></div>
-      <div class="subject-count">Puisi, Drama & Karya Ilmiah</div>
+      <span class="subject-badge">50 Topik</span>
+      <span class="subject-emoji">⚽</span>
+      <div class="subject-name">PJOK<span class="subject-arrow">→</span></div>
+      <div class="subject-count"></div>
     </div>
-    <div class="subject-card" onclick="startQuiz('sejarah')">
+    <!-- <div class="subject-card" onclick="startQuiz('sejarah')">
       <span class="subject-badge">63 Soal</span>
       <span class="subject-emoji">⚔️</span>
       <div class="subject-name">Sejarah Indonesia <span class="subject-arrow">→</span></div>
       <div class="subject-count">Perjuangan Kemerdekaan</div>
-    </div>
+    </div> -->
     <div class="subject-card" onclick="startQuiz('all')">
       <span class="subject-badge">Semua</span>
       <span class="subject-emoji">🔥</span>
@@ -558,882 +558,114 @@
 // DATA BANK SOAL
 // ============================================================
 const BANK = {
-  pkn: [
-    { q: "Berikut ini yang dapat terjadi jika masyarakat gagal memahami keberagaman adalah ....", opts: ["Terjadinya peningkatan solidaritas antar-kelompok","Terjadinya ketegangan dan konflik antar-kelompok","Terciptanya kerja sama yang kuat antara individu","Meningkatnya inovasi di masyarakat","Terjadinya peningkatan rasa hormat terhadap perbedaan"], ans: 1, exp: "Ketika masyarakat gagal memahami keberagaman, perbedaan dianggap sebagai ancaman. Ini memicu prasangka, sikap tidak toleran, dan akhirnya ketegangan serta konflik antar kelompok. Solidaritas, inovasi, dan rasa hormat justru muncul ketika masyarakat BERHASIL memahami keberagaman." },
-    { q: "Salah satu faktor pendorong terwujudnya harmoni dalam keberagaman adalah ....", opts: ["Pendidikan yang mengajarkan nilai-nilai toleransi dan saling menghormati","Pendidikan yang mendorong homogenitas budaya","Komunikasi yang tertutup antara kelompok yang berbeda","Pemahaman yang rendah terhadap budaya lain","Kebijakan yang mengedepankan diskriminasi sosial"], ans: 0, exp: "Pendidikan yang menanamkan nilai toleransi dan saling menghormati adalah fondasi utama harmoni. Melalui pendidikan, generasi muda belajar untuk menerima perbedaan sebagai kekayaan, bukan ancaman. Opsi lain (homogenitas, komunikasi tertutup, diskriminasi) justru menjadi hambatan harmoni." },
-    { q: "Faktor yang dapat MENGHAMBAT terciptanya harmoni dalam keberagaman adalah ....", opts: ["Pendidikan yang menekankan pentingnya menghargai perbedaan","Komunikasi yang terbuka dan efektif antarkelompok","Kesetaraan dalam akses terhadap hak dan kesempatan","Kecemburuan sosial akibat ketidakadilan distribusi sumber daya","Pemimpin yang mempromosikan keberagaman dan toleransi"], ans: 3, exp: "Kecemburuan sosial akibat ketidakadilan distribusi sumber daya menciptakan rasa tidak puas dan membandingkan nasib antar kelompok, sehingga menghambat harmoni. Pilihan A, B, C, dan E justru merupakan faktor PENDORONG harmoni." },
-    { q: "Peran media dalam mendorong harmoni dalam keberagaman adalah ....", opts: ["Menampilkan narasi yang memperkuat stereotipe dan diskriminasi","Memperkuat prasangka negatif terhadap kelompok lain","Menyebarkan informasi yang mendorong saling pengertian dan inklusi","Menghilangkan nilai-nilai budaya lokal dari masyarakat","Mendorong homogenitas di kalangan masyarakat"], ans: 2, exp: "Media yang bertanggung jawab berperan menyebarkan informasi yang mendorong saling pengertian, inklusivitas, dan menampilkan keberagaman secara positif. Ini membantu masyarakat memahami satu sama lain. Pilihan lain merupakan dampak negatif media yang tidak bertanggung jawab." },
-    { q: "Peran solutif warga negara untuk menyelesaikan konflik antarkelompok ditunjukkan oleh nomor: (1) Mendukung proses mediasi antarkelompok; (2) Memperburuk konflik dengan menyebarkan fitnah; (3) Menyediakan forum diskusi untuk mencari solusi bersama; (4) Menghindari kelompok yang berkonflik tanpa memberi solusi; (5) Menghormati perbedaan pendapat dan pandangan.", opts: ["(1), (3), dan (5)","(2), (4), dan (5)","(1), (4), dan (5)","(2), (3), dan (4)","(3), (4), dan (5)"], ans: 0, exp: "Peran solutif artinya memberikan solusi nyata. Nomor 1 (mediasi), 3 (forum diskusi), dan 5 (menghormati perbedaan) adalah tindakan positif dan konstruktif. Nomor 2 (menyebar fitnah) dan 4 (menghindari tanpa solusi) justru memperburuk konflik." },
-    { q: "Berikut ini yang dapat menjadi sumber utama konflik dalam masyarakat yang beragam adalah ....", opts: ["Kesamaan latar belakang budaya","Kesetaraan sosial-ekonomi","Perbedaan nilai, agama, dan budaya","Penegakan hukum yang kuat","Keharmonisan antarkelompok"], ans: 2, exp: "Perbedaan nilai, agama, dan budaya menjadi sumber konflik ketika tidak dikelola dengan baik. Kesamaan justru mengurangi konflik. Kesetaraan, hukum yang kuat, dan keharmonisan adalah faktor yang mencegah konflik." },
-    { q: "Penyebab kesenjangan sosial-ekonomi yang berpotensi menjadi konflik dalam masyarakat majemuk adalah ....", opts: ["Meningkatnya toleransi antarkelompok","Munculnya kecemburuan sosial dan ketidakpuasan","Penguatan kerja sama antarmasyarakat","Peningkatan kualitas hidup semua kelompok","Menghilangnya perbedaan antarindividu"], ans: 1, exp: "Kesenjangan sosial-ekonomi memunculkan kecemburuan sosial dan ketidakpuasan. Kelompok yang merasa tidak adil distribusi kekayaan akan cenderung berkonflik dengan kelompok yang lebih beruntung. Opsi lain justru menjadi dampak positif dari pengelolaan yang baik." },
-    { q: "Peran serta warga negara dalam mendukung sistem pemerintahan demokrasi: (1) Mematuhi undang-undang yang berlaku; (2) Menerapkan ideologi selain Pancasila; (3) Menggunakan hak pilih dalam pemilu; (4) Menjunjung tinggi demokrasi Pancasila; (5) Membentuk kelompok separatis.", opts: ["(1), (3), dan (4)","(2), (3), dan (5)","(3), (4), dan (5)","(1), (2), dan (4)","(2), (4), dan (5)"], ans: 0, exp: "Nomor 1 (taat UU), 3 (menggunakan hak pilih), dan 4 (menjunjung demokrasi Pancasila) adalah bentuk partisipasi demokratis yang tepat. Nomor 2 (ideologi selain Pancasila) dan 5 (kelompok separatis) bertentangan dengan NKRI dan sistem demokrasi." },
-    { q: "Alasan mediasi dengan pihak ketiga sering digunakan dalam penyelesaian konflik adalah ....", opts: ["Pihak ketiga bisa mengambil alih konflik dan membuat keputusan sepihak","Pihak ketiga membantu memfasilitasi dialog tanpa memberikan keputusan","Pihak ketiga mendorong penggunaan kekerasan untuk menyelesaikan masalah","Pihak ketiga dapat menekan kedua belah pihak untuk menerima solusi","Pihak ketiga berperan sebagai hakim dalam konflik tersebut"], ans: 1, exp: "Mediator (pihak ketiga) berfungsi sebagai fasilitator netral yang membantu kedua pihak berkomunikasi dan mencari solusi sendiri, tanpa memaksakan keputusan. Inilah yang membedakan mediasi dari arbitrase (pihak ketiga memutuskan) atau pengadilan." },
-    { q: "Negara yang menganut bentuk negara serikat/federal ditunjukkan oleh: (1) Jerman; (2) Australia; (3) Indonesia; (4) Prancis; (5) Jepang.", opts: ["(1) dan (2)","(2) dan (4)","(3) dan (5)","(1) dan (4)","(2) dan (5)"], ans: 0, exp: "Jerman (Bundesrepublik) dan Australia adalah negara federal, di mana terdapat negara bagian dengan pemerintahan sendiri namun tetap dalam satu negara. Indonesia adalah negara kesatuan (NKRI). Prancis adalah negara kesatuan republik. Jepang adalah monarki konstitusional kesatuan." },
-    { q: "Bentuk pemerintahan Indonesia adalah ....", opts: ["Monarki konstitusional","Monarki absolut","Republik","Oligarki","Federalisme"], ans: 2, exp: "Indonesia adalah negara Republik, artinya kepala negara adalah presiden yang dipilih oleh rakyat (bukan raja). Monarki berarti dipimpin raja. Oligarki berarti dikuasai segelintir orang. Federalisme adalah bentuk negara, bukan pemerintahan." },
-    { q: "Pada sistem pemerintahan presidensial seperti di Indonesia, presiden memiliki kekuasaan sebagai ....", opts: ["Kepala negara dan kepala pemerintahan","Kepala pemerintahan","Kepala negara","Kepala legislatif","Kepala kehakiman"], ans: 0, exp: "Dalam sistem presidensial, presiden memegang dua peran sekaligus: kepala negara (simbol negara) dan kepala pemerintahan (menjalankan roda pemerintahan sehari-hari). Ini berbeda dengan sistem parlementer di mana dua peran tersebut dipisah." },
-    { q: "Bentuk negara kesatuan di Indonesia berarti bahwa ....", opts: ["Setiap daerah memiliki hak untuk membuat konstitusi sendiri","Kedaulatan daerah lebih besar daripada pemerintahan pusat","Kekuasaan pemerintahan terpusat pada pemerintahan pusat","Setiap daerah bisa memiliki kepala negara sendiri","Semua undang-undang dibuat oleh pemerintah daerah"], ans: 2, exp: "Negara Kesatuan Republik Indonesia (NKRI) berarti kedaulatan ada di tangan pemerintah pusat. Meski ada otonomi daerah, kekuasaan tertinggi tetap di pusat. Ini berbeda dengan negara federal di mana negara bagian punya konstitusi dan kedaulatan sendiri." },
-    { q: "Ciri negara kesatuan ditunjukkan oleh: (1) Negara memiliki satu konstitusi; (2) Pembagian kekuasaan antara pusat dan daerah; (3) Pemerintah pusat mengendalikan kebijakan utama; (4) Negara bagian memiliki kedaulatan terbatas; (5) Setiap wilayah memiliki undang-undang sendiri.", opts: ["(1) dan (2)","(2) dan (4)","(3) dan (5)","(2) dan (5)","(1) dan (3)"], ans: 4, exp: "Ciri utama negara kesatuan: (1) satu konstitusi untuk seluruh wilayah dan (3) pemerintah pusat mengendalikan kebijakan utama. Pembagian kekuasaan pusat-daerah (2) dan negara bagian berdaulat (4) adalah ciri negara federal. Tiap wilayah punya UU sendiri (5) juga ciri federal." },
-    { q: "Sistem pemerintahan Indonesia termasuk ke dalam kategori ....", opts: ["Sistem parlementer","Sistem monarki","Sistem presidensial","Sistem teokrasi","Sistem feodal"], ans: 2, exp: "Indonesia menggunakan sistem presidensial di mana presiden dipilih langsung oleh rakyat dan bertanggung jawab kepada rakyat, bukan kepada parlemen. Presiden memegang kekuasaan eksekutif secara penuh." },
-    { q: "Negara yang menggunakan sistem pemerintahan parlementer adalah ....", opts: ["Indonesia","Jepang","Amerika Serikat","Tiongkok","Korea Utara"], ans: 1, exp: "Jepang menggunakan sistem parlementer di mana perdana menteri dipilih oleh parlemen (Diyet). Kaisar adalah kepala negara seremonial. Indonesia menggunakan presidensial. Amerika Serikat juga presidensial. Tiongkok dan Korea Utara adalah negara otoriter/komunis." },
-    { q: "Salah satu ciri negara dengan sistem pemerintahan parlementer adalah ....", opts: ["Kepala negara dan kepala pemerintahan adalah satu orang yang sama","Kepala negara dipilih langsung oleh rakyat","Perdana menteri diangkat oleh parlemen","Pemerintah daerah memiliki kekuasaan penuh","Semua kekuasaan berada di tangan kepala negara"], ans: 2, exp: "Dalam sistem parlementer, perdana menteri (kepala pemerintahan) dipilih/diangkat oleh parlemen berdasarkan koalisi mayoritas. Parlemen dapat menjatuhkan perdana menteri melalui mosi tidak percaya. Ini berbeda dari presidensial di mana presiden dipilih langsung rakyat." },
-    { q: "Yang dimaksud sistem semipresidensial adalah ....", opts: ["Kepala negara dan kepala pemerintahan adalah dua orang yang berbeda","Presiden memiliki kekuasaan absolut","Pemerintah daerah memiliki otonomi penuh","Presiden bertanggung jawab kepada parlemen","Kekuasaan hanya ada pada lembaga legislatif"], ans: 0, exp: "Sistem semipresidensial (contoh: Prancis) menggabungkan elemen presidensial dan parlementer. Presiden (kepala negara) dipilih rakyat dan memegang kekuasaan signifikan, sedangkan perdana menteri (kepala pemerintahan) bertanggung jawab kepada parlemen. Jadi ada DUA orang yang memimpin." },
-    { q: "Salah satu gagasan induktif dalam penyelesaian konflik adalah pendekatan restorative justice yang berarti ....", opts: ["Memberikan hukuman berat kepada pihak yang bersalah","Mengabaikan konflik agar waktu yang menyelesaikannya","Mendorong pelaku konflik untuk memperbaiki dampak yang ditimbulkan","Menyerahkan konflik kepada pihak ketiga tanpa melibatkan korban","Menghukum kedua pihak yang berkonflik tanpa memberikan solusi"], ans: 2, exp: "Restorative justice (keadilan restoratif) adalah pendekatan yang berfokus pada pemulihan hubungan dan perbaikan dampak konflik, bukan sekadar penghukuman. Pelaku didorong untuk bertanggung jawab, meminta maaf, dan memperbaiki kerusakan yang ditimbulkan kepada korban dan komunitas." },
-    { q: "Mengedepankan nilai-nilai toleransi dan empati dalam penyelesaian konflik bisa dilakukan individu dengan cara ....", opts: ["Menghindari interaksi dengan orang yang berbeda pendapat","Memahami sudut pandang orang lain dengan penuh empati","Memaksakan solusi sendiri","Menolak berdiskusi dengan pihak yang berkonflik","Menghindari semua konflik tanpa mencari solusi"], ans: 1, exp: "Empati adalah kemampuan menempatkan diri pada posisi orang lain. Memahami sudut pandang orang lain dengan empati adalah langkah konkret untuk membangun toleransi dan meredakan konflik. Menghindari, memaksakan, atau menolak diskusi justru memperburuk konflik." },
-    { q: "Indonesia menganut bentuk negara ....", opts: ["Federal","Kesatuan","Federasi","Republik federal","Monarki absolut"], ans: 1, exp: "Indonesia adalah Negara Kesatuan Republik Indonesia (NKRI). Ini ditegaskan dalam UUD 1945 Pasal 1 ayat 1: 'Negara Indonesia ialah Negara Kesatuan, yang berbentuk Republik.' Bentuk federal berarti ada negara-negara bagian dengan pemerintahan sendiri." },
-    { q: "Ciri dari sistem pemerintahan presidensial: (1) Presiden memegang kekuasaan eksekutif; (2) Menteri diangkat oleh presiden; (3) Presiden dipilih langsung oleh rakyat; (4) Perdana menteri dipilih oleh parlemen; (5) Presiden bertanggung jawab kepada parlemen.", opts: ["(1), (2), dan (3)","(1), (3), dan (5)","(2), (3), dan (4)","(3), (4), dan (5)","(2), (4), dan (5)"], ans: 0, exp: "Ciri presidensial: presiden sebagai pemegang eksekutif (1), presiden bebas memilih menterinya sendiri (2), dan presiden dipilih langsung rakyat (3). Perdana menteri dipilih parlemen (4) adalah ciri parlementer. Presiden bertanggung jawab kepada parlemen (5) adalah ciri parlementer." },
-    { q: "Pada sistem pemerintahan Indonesia, DPR berfungsi sebagai ....", opts: ["Lembaga eksekutif","Lembaga yudikatif","Lembaga legislatif","Lembaga monarki","Lembaga kehakiman"], ans: 2, exp: "DPR (Dewan Perwakilan Rakyat) adalah lembaga legislatif yang bertugas membuat undang-undang, menyusun anggaran negara (APBN), dan mengawasi jalannya pemerintahan. Eksekutif adalah presiden/pemerintah. Yudikatif adalah MA, MK, dan KY." },
-    { q: "Konflik berbasis identitas seperti agama atau etnis sering terjadi karena ....", opts: ["Terlalu banyak kesamaan antara kelompok","Ketidakmampuan untuk bekerja sama","Kurangnya pemahaman dan penghargaan terhadap perbedaan","Dukungan penuh dari pihak luar","Berkurangnya rasa nasionalisme"], ans: 2, exp: "Konflik identitas (agama, etnis, ras) biasanya berakar dari kurangnya pemahaman tentang kelompok lain dan tidak adanya penghargaan terhadap perbedaan. Ketika seseorang tidak mengenal dan menghormati identitas lain, mudah muncul prasangka yang berujung konflik." },
-    { q: "Potensi konflik yang sering terjadi dalam masyarakat beragam ketika perbedaan tidak dikelola dengan baik adalah ....", opts: ["Kolaborasi antarkelompok yang makin kuat","Terciptanya hubungan yang harmonis","Ketegangan antarkelompok dan munculnya prasangka","Peningkatan kesempatan kerja","Peningkatan akses terhadap pendidikan"], ans: 2, exp: "Ketika perbedaan tidak dikelola dengan baik, muncul rasa curiga, prasangka, dan ketegangan. Ini bisa meningkat menjadi konflik terbuka. Kolaborasi, harmoni, dan peningkatan kualitas hidup adalah hasil dari pengelolaan keberagaman yang BAIK." },
-    { q: "Konflik dalam masyarakat beragam sering kali diperparah oleh ....", opts: ["Komunikasi terbuka antarkelompok","Stereotipe negatif dan diskriminasi","Pemberdayaan komunitas lokal","Adanya dialog antarkelompok","Penghormatan terhadap keberagaman"], ans: 1, exp: "Stereotipe negatif (generalisasi buruk tentang suatu kelompok) dan diskriminasi (perlakuan tidak adil) adalah katalis konflik. Keduanya menciptakan kebencian dan ketidakpercayaan yang memperparah situasi. Komunikasi terbuka dan dialog justru meredakan konflik." },
-    { q: "Peran perbedaan pandangan politik dalam menciptakan konflik di masyarakat yang beragam adalah ....", opts: ["Meningkatkan kerja sama antarkelompok","Membantu memperkuat identitas nasional","Memperkuat hubungan antarkelompok","Menyebabkan polarisasi politik dan ketegangan antarkelompok","Meningkatkan solidaritas sosial"], ans: 3, exp: "Perbedaan pandangan politik yang tidak dikelola dewasa dapat menyebabkan polarisasi — masyarakat terbelah menjadi kutub-kutub yang saling bermusuhan. Ini menciptakan ketegangan yang berpotensi konflik. Dialog politik yang sehat justru bisa memperkuat demokrasi." },
-    { q: "Ketika masyarakat tidak menghargai perbedaan budaya, hal ini dapat menyebabkan ....", opts: ["Toleransi meningkat","Konflik sosial menjadi lebih intens","Peningkatan solidaritas antarkelompok","Berkurangnya diskriminasi","Penyelesaian konflik yang lebih mudah"], ans: 1, exp: "Ketidaksesuaian budaya yang tidak dihargai menciptakan gesekan sosial. Ketika satu kelompok merendahkan budaya lain, muncul rasa tersinggung dan permusuhan yang membuat konflik sosial semakin intens dan sulit diselesaikan." },
-    { q: "Peran warga negara yang tepat dalam menjaga harmoni pada masyarakat yang beragam: (1) Mengutamakan dialog dan komunikasi yang baik; (2) Melakukan tindakan sepihak tanpa memedulikan orang lain; (3) Menyebarkan informasi yang benar dan akurat; (4) Menjalin kerja sama antarkelompok sosial; (5) Menghindari dialog antarkelompok.", opts: ["(1), (3), dan (4)","(2), (3), dan (5)","(1), (2), dan (4)","(2), (4), dan (5)","(3), (4), dan (5)"], ans: 0, exp: "Dialog dan komunikasi (1), menyebar info akurat (3), dan kerja sama antarkelompok (4) adalah peran positif warga negara. Tindakan sepihak (2) mengabaikan kepentingan bersama. Menghindari dialog (5) justru menciptakan jarak dan kesalahpahaman." },
-    { q: "Konflik dapat terjadi ketika kelompok mayoritas merasa superior terhadap kelompok minoritas. Hal ini sering disebut ....", opts: ["Toleransi","Diskriminasi","Keadilan sosial","Kolaborasi","Inklusivitas"], ans: 1, exp: "Diskriminasi adalah perlakuan atau sikap yang membeda-bedakan seseorang berdasarkan ras, agama, etnis, atau identitas lain, di mana satu kelompok dianggap lebih rendah. Rasa superior mayoritas atas minoritas adalah manifestasi diskriminasi. Toleransi dan inklusivitas adalah kebalikannya." },
-    { q: "Peran positif warga negara dalam penyelesaian konflik: (1) Mendorong dialog terbuka; (2) Menggunakan kekerasan; (3) Menjunjung nilai keadilan dan kesetaraan; (4) Mendukung mediasi; (5) Menyebarkan berita tidak benar.", opts: ["(1), (2), dan (5)","(2), (4), dan (5)","(1), (3), dan (4)","(1), (3), dan (5)","(2), (3), dan (4)"], ans: 2, exp: "Dialog terbuka (1), menjunjung keadilan (3), dan mendukung mediasi (4) adalah peran positif dan konstruktif. Kekerasan (2) dan menyebar berita bohong (5) adalah tindakan yang memperburuk konflik dan bertentangan dengan nilai kemanusiaan." },
-    { q: "Di dalam menjaga keutuhan ideologi Pancasila, warga negara diharapkan untuk ....", opts: ["Mengikuti paham yang bertentangan dengan Pancasila","Menghargai perbedaan suku, agama, dan budaya","Mempromosikan ideologi lain yang lebih baik","Menolak keberagaman sebagai bagian dari kekuatan bangsa","Tidak ikut serta dalam proses demokrasi"], ans: 1, exp: "Sila ke-3 Pancasila (Persatuan Indonesia) mengamanatkan penghargaan terhadap keberagaman. Menghargai perbedaan suku, agama, dan budaya adalah wujud nyata pengamalan Pancasila dalam kehidupan sehari-hari." },
-    { q: "Peran warga negara dalam melawan radikalisme yang bertentangan dengan ideologi Pancasila adalah dengan ....", opts: ["Menyebarkan berita palsu untuk melawan paham radikal","Menggunakan kekerasan untuk melawan paham radikal","Meningkatkan pemahaman dan penyebaran nilai-nilai Pancasila","Menghindari dialog dengan kelompok radikal","Membiarkan radikalisme berkembang secara alami"], ans: 2, exp: "Cara terbaik melawan radikalisme adalah dengan meningkatkan pemahaman nilai-nilai Pancasila — bukan dengan kekerasan atau hoaks. Pendidikan Pancasila yang kuat menciptakan imunitas ideologis pada masyarakat terhadap paham-paham ekstrem." },
-    { q: "Salah satu bentuk partisipasi warga negara dalam menjaga keutuhan NKRI adalah ....", opts: ["Memisahkan diri dari NKRI jika tidak sepakat dengan kebijakan pemerintah","Melakukan aksi kekerasan untuk menyelesaikan konflik","Menghargai hak asasi manusia dan menghormati perbedaan","Mengabaikan nilai-nilai demokrasi","Mendorong perpecahan di antara kelompok masyarakat"], ans: 2, exp: "Menghargai HAM dan menghormati perbedaan adalah wujud partisipasi aktif menjaga NKRI. Ini mencerminkan semangat Bhinneka Tunggal Ika. Memisahkan diri, kekerasan, dan mendorong perpecahan justru mengancam keutuhan NKRI." },
-    { q: "Salah satu faktor yang sering memicu konflik terkait sumber daya alam dalam masyarakat adalah ....", opts: ["Ketersediaan yang berlimpah dari sumber daya alam","Akses yang merata ke sumber daya alam untuk semua kelompok","Persaingan antara kelompok masyarakat untuk mengakses sumber daya alam yang terbatas","Pemanfaatan yang adil dan merata dari sumber daya alam","Ketidakpedulian terhadap lingkungan"], ans: 2, exp: "Kelangkaan sumber daya alam memunculkan persaingan antar kelompok. Ketika distribusi tidak merata, kelompok yang merasa dirugikan akan berkonflik dengan kelompok yang lebih beruntung atau dengan pemerintah. Akses merata justru mencegah konflik." },
-    { q: "Cara individu membangun komunikasi yang baik dalam penyelesaian konflik adalah dengan ....", opts: ["Memaksakan pendapat kepada orang lain","Mendengarkan secara aktif tanpa menghakimi","Menjauhi orang yang terlibat konflik","Mengabaikan pendapat pihak lain","Menghindari semua jenis komunikasi"], ans: 1, exp: "Mendengarkan secara aktif (active listening) tanpa menghakimi adalah keterampilan komunikasi kunci. Ini menunjukkan rasa hormat, menciptakan rasa aman bagi pihak lain untuk berbicara jujur, dan membuka ruang untuk saling memahami — fondasi penyelesaian konflik." },
-    { q: "Tugas cabang eksekutif dalam sistem pemerintahan Indonesia: (1) Membuat undang-undang; (2) Melaksanakan pemerintahan sehari-hari; (3) Menyelesaikan sengketa hukum; (4) Memutuskan perkara pidana dan perdata; (5) Mengatur kebijakan publik.", opts: ["(2) dan (5)","(2) dan (3)","(1) dan (2)","(1) dan (5)","(3) dan (4)"], ans: 0, exp: "Cabang eksekutif (presiden dan kabinet) bertugas melaksanakan pemerintahan sehari-hari (2) dan mengatur kebijakan publik (5). Membuat UU (1) adalah tugas legislatif. Menyelesaikan sengketa (3) dan memutuskan perkara (4) adalah tugas yudikatif." },
-    { q: "Keluarga dapat menjadi teladan dalam penyelesaian konflik dengan cara ....", opts: ["Menghindari diskusi terbuka dan langsung mengambil keputusan sepihak","Menunjukkan cara menyelesaikan konflik dengan dialog yang sehat","Menjauhi anak-anak saat ada konflik keluarga","Memaksa anggota keluarga untuk setuju tanpa musyawarah","Menciptakan suasana tegang di rumah saat ada masalah"], ans: 1, exp: "Keluarga adalah sekolah pertama anak. Dengan menunjukkan penyelesaian konflik melalui dialog yang sehat — berbicara baik-baik, mendengarkan, mencari solusi bersama — orang tua mengajarkan keterampilan resolusi konflik yang akan dibawa anak hingga dewasa." },
-    { q: "Tantangan dalam menjaga ideologi Pancasila di era globalisasi adalah ....", opts: ["Keterbukaan ekonomi dan budaya dunia","Semangat nasionalisme yang meningkat","Peran aktif pemerintah dalam pengamalan Pancasila","Keberagaman budaya yang dihormati","Penguatan identitas nasional"], ans: 0, exp: "Globalisasi membawa keterbukaan ekonomi dan budaya yang menghadirkan nilai-nilai asing. Tantangannya adalah ketika nilai-nilai luar ini bertentangan dengan Pancasila (individualisme ekstrem, sekularisme, dll.) namun tetap diadopsi tanpa filter oleh masyarakat." },
-    { q: "Gangguan terhadap keutuhan NKRI dapat terjadi ketika ....", opts: ["Seluruh masyarakat menghormati hukum dan peraturan","Terdapat kelompok yang memaksakan kepentingan pribadi atau golongan di atas kepentingan nasional","Warga negara memiliki kesadaran berbangsa dan bernegara yang tinggi","Nilai-nilai persatuan dan kesatuan dijunjung tinggi","Warga negara yang aktif dalam menjaga kedaulatan negara"], ans: 1, exp: "NKRI terancam ketika ada kelompok yang mendahulukan kepentingan pribadi/golongan (korupsi, separatisme, radikalisme) di atas kepentingan nasional. Pilihan lain justru memperkuat NKRI." },
-    { q: "Peran aktif warga negara dalam menjaga keutuhan NKRI dapat dilakukan dengan cara ....", opts: ["Mengabaikan aturan dan undang-undang negara","Menjadi bagian dari kelompok separatis","Berpartisipasi dalam kegiatan gotong royong dan kegiatan sosial","Membiarkan konflik sosial terjadi tanpa campur tangan","Menghindari proses demokrasi"], ans: 2, exp: "Gotong royong dan kegiatan sosial memperkuat ikatan sosial antarwarga, menciptakan rasa kebersamaan dan persatuan. Ini adalah manifestasi nyata semangat NKRI dalam kehidupan sehari-hari." },
-    { q: "Alasan strategi kolaboratif dapat membantu menyelesaikan konflik adalah ....", opts: ["Dengan memaksa salah satu pihak untuk menyerah","Dengan memperkuat posisi salah satu pihak","Dengan mendorong kerja sama antarpihak untuk menemukan solusi yang saling menguntungkan","Dengan mengabaikan kebutuhan salah satu pihak","Dengan menghentikan bentuk komunikasi"], ans: 2, exp: "Strategi kolaboratif (win-win solution) mendorong semua pihak bekerja sama mencari solusi yang menguntungkan semua pihak. Ini berbeda dari kompetisi (salah satu menang) atau kompromi (semua sedikit berkorban). Kolaborasi menciptakan solusi yang lebih kreatif dan tahan lama." },
-    { q: "Manfaat utama dari penyelesaian konflik secara damai adalah ....", opts: ["Meningkatkan ketegangan antarpihak","Menciptakan solusi yang dapat diterima bersama","Menghancurkan hubungan antarpihak","Memperburuk prasangka antarkelompok","Menghindari dialog dan komunikasi"], ans: 1, exp: "Penyelesaian konflik secara damai menghasilkan solusi yang disepakati bersama, menjaga hubungan, dan mencegah kekerasan. Ini menciptakan perdamaian yang berkelanjutan, bukan sekadar gencatan senjata sementara." },
-    { q: "Pendekatan preventif dalam mengatasi konflik di masyarakat dapat dilakukan melalui ....", opts: ["Memperkuat diskriminasi antarkelompok","Membatasi komunikasi antarkelompok","Pendidikan tentang keberagaman dan penghargaan terhadap perbedaan","Mengabaikan masalah sosial-ekonomi","Meningkatkan segregasi antarkelompok masyarakat"], ans: 2, exp: "Pendekatan preventif artinya mencegah konflik sebelum terjadi. Pendidikan keberagaman membangun pemahaman dan toleransi sejak dini, sehingga ketika perbedaan muncul, masyarakat memiliki bekal untuk menghadapinya secara damai." },
-    { q: "Strategi mediasi berhasil ketika ....", opts: ["Salah satu pihak dipaksa menerima hasil","Kedua belah pihak bersedia bekerja sama untuk menemukan solusi","Hanya satu pihak yang diuntungkan","Konflik diselesaikan melalui kekerasan","Komunikasi terhenti di antara kedua belah pihak"], ans: 1, exp: "Mediasi berhasil ketika kedua pihak memiliki itikad baik untuk menyelesaikan konflik, bersedia mendengarkan satu sama lain, dan kooperatif dalam mencari solusi. Tanpa kesediaan kedua pihak, mediasi tidak bisa berjalan." },
-    { q: "Arti penting harmoni dalam keberagaman adalah ....", opts: ["Harmoni menciptakan masyarakat yang homogen","Harmoni memungkinkan perbedaan menjadi lebih penting dari kesamaan","Harmoni dalam keberagaman penting untuk menciptakan kedamaian dan stabilitas sosial","Harmoni menyebabkan masyarakat menjadi lebih tertutup terhadap perbedaan","Harmoni dalam keberagaman menghapuskan semua bentuk keberagaman"], ans: 2, exp: "Harmoni dalam keberagaman bukan berarti menghilangkan perbedaan, melainkan hidup berdampingan dengan damai meski berbeda. Ini menciptakan stabilitas sosial yang memungkinkan pembangunan dan kemajuan bersama." },
-    { q: "Yang merupakan manfaat dari terciptanya harmoni dalam keberagaman adalah ....", opts: ["Meningkatkan ketegangan antarkelompok","Mendorong kolaborasi dan kerja sama di antara masyarakat yang berbeda","Meminimalisir kolaborasi antara kelompok yang berbeda","Membuat masyarakat makin tertutup terhadap perubahan","Mengurangi peran toleransi dalam masyarakat"], ans: 1, exp: "Harmoni menciptakan iklim kepercayaan dan rasa aman, yang mendorong kolaborasi. Masyarakat yang harmonis bisa bekerja sama lintas perbedaan untuk mencapai tujuan bersama, menghasilkan inovasi dan kemajuan yang lebih besar." },
-    { q: "Dampak dari kurangnya harmoni dalam keberagaman adalah ....", opts: ["Terciptanya kedamaian dan stabilitas sosial","Meningkatnya potensi konflik dan ketegangan antarkelompok","Meningkatnya kerja sama dan kolaborasi antara kelompok yang berbeda","Menurunnya tingkat inovasi dan kreativitas masyarakat","Berkurangnya tingkat keadilan sosial di masyarakat"], ans: 1, exp: "Tanpa harmoni, perbedaan dilihat sebagai ancaman, bukan kekayaan. Ini meningkatkan potensi konflik dan ketegangan. Pilihan D (menurunnya inovasi) bisa jadi dampak sekunder, namun dampak paling langsung dan utama adalah meningkatnya konflik." },
-    { q: "Manfaat dari menghargai keberagaman dalam kehidupan sehari-hari adalah ....", opts: ["Mengurangi rasa hormat terhadap orang lain","Meningkatkan prasangka terhadap kelompok lain","Mendorong rasa saling menghormati dan toleransi di antara individu","Menghilangkan identitas budaya dalam masyarakat","Meminimalisir interaksi antarkelompok"], ans: 2, exp: "Menghargai keberagaman dalam keseharian — mau berinteraksi dengan orang berbeda, mempelajari budaya lain, tidak merendahkan kelompok lain — membangun budaya saling menghormati dan toleransi yang memperkuat persatuan." },
-    { q: "Strategi yang efektif untuk mengatasi konflik dalam masyarakat beragam adalah ....", opts: ["Mengabaikan perbedaan antarkelompok","Mengutamakan persamaan di antara kelompok tanpa memedulikan perbedaan","Mendorong dialog terbuka dan mediasi antarkelompok","Meningkatkan segregasi antara kelompok masyarakat","Membiarkan konflik berkembang secara alami"], ans: 2, exp: "Dialog terbuka dan mediasi adalah strategi paling efektif karena langsung mengatasi akar masalah — kesalahpahaman dan kurangnya komunikasi. Dialog menciptakan pemahaman bersama, sedangkan mediasi membantu mencari solusi yang adil." },
-    { q: "Peran pendidikan dalam mengatasi konflik di masyarakat yang beragam adalah ....", opts: ["Mengajarkan homogenitas budaya","Meningkatkan kesadaran akan perbedaan dan menghargai keberagaman","Menekankan pentingnya satu identitas yang seragam","Mengabaikan pentingnya dialog antarbudaya","Memperkuat batasan antarkelompok"], ans: 1, exp: "Pendidikan yang baik mengajarkan siswa untuk mengenal, memahami, dan menghargai keberagaman. Ini membangun kesadaran bahwa perbedaan adalah kekayaan, dan mengembangkan keterampilan untuk hidup berdampingan secara damai." },
-    { q: "Demokrasi Pancasila berbeda dari demokrasi liberal karena ....", opts: ["Tidak mengakui hak asasi manusia","Menolak peran rakyat dalam pemerintahan","Menekankan musyawarah dan nilai kekeluargaan","Menghapuskan sistem pemilu","Menempatkan militer di atas hukum"], ans: 2, exp: "Demokrasi Pancasila mengedepankan musyawarah untuk mufakat (mencari kesepakatan bersama), nilai kekeluargaan, dan kepentingan bersama di atas kepentingan individu. Demokrasi liberal lebih mengedepankan suara mayoritas dan hak individu." },
-    { q: "Salah satu wujud nyata dalam menjaga persatuan dan kesatuan adalah ....", opts: ["Menolak budaya lokal","Mengutamakan suku sendiri","Melakukan kerja sama lintas budaya","Membatasi hubungan antaragama","Memaksakan kehendak kelompok"], ans: 2, exp: "Kerja sama lintas budaya — berkolaborasi dengan orang dari latar belakang berbeda untuk mencapai tujuan bersama — adalah wujud nyata Bhinneka Tunggal Ika. Ini mempererat persatuan sambil menghormati keragaman." },
-    { q: "Dalam sistem demokrasi Pancasila, sikap pemerintah yang sebaiknya dilakukan terhadap warga yang menyampaikan kritik di media sosial adalah ....", opts: ["Memblokir akun warga tersebut","Mengabaikan kritik karena bukan pejabat","Mengajak berdialog dan mendengar aspirasinya","Menyuruh aparat untuk menegur secara hukum","Menghapus semua komentar negatif"], ans: 2, exp: "Demokrasi Pancasila menghargai kebebasan berpendapat sebagai hak asasi. Pemerintah yang demokratis seharusnya merespons kritik dengan mengajak dialog konstruktif, bukan memblokir, mengabaikan, atau melakukan tindakan intimidasi." },
-    { q: "Berdasarkan nilai persatuan NKRI, tindakan terbaik pemerintah jika suatu daerah ingin memisahkan diri karena merasa kurang diperhatikan adalah ....", opts: ["Menutup akses komunikasi daerah tersebut","Memberi sanksi kepada seluruh penduduk daerah itu","Menarik seluruh bantuan dan fasilitas dari pemerintah","Melakukan pendekatan dialog dan pembangunan yang adil","Membiarkan daerah itu merdeka"], ans: 3, exp: "Nilai persatuan mengajarkan bahwa perbedaan diselesaikan dengan dialog dan pemenuhan kebutuhan, bukan represif atau pembiaran. Pendekatan dialog untuk memahami keluhan, diikuti pembangunan yang adil dan merata, adalah solusi yang menguatkan persatuan." },
-    { q: "Sebagai pemuda yang peduli demokrasi, langkah konkret yang bisa dilakukan untuk mengatasi fenomena golput dalam pemilu adalah ....", opts: ["Menghormati keputusan mereka tanpa mencoba memahami","Mengajak mereka berdiskusi tentang pentingnya suara dalam demokrasi","Menuduh mereka tidak cinta negara","Membuat unggahan provokatif di media sosial","Mengajak orang lain untuk ikut golput"], ans: 1, exp: "Mengajak diskusi tentang pentingnya partisipasi demokratis adalah pendekatan edukatif yang menghormati orang lain sambil memperkuat kesadaran politik. Menuduh, provokasi, atau ikut golput justru merusak demokrasi." },
-    { q: "Dalam sistem presidensial, jika presiden bertindak sewenang-wenang, lembaga yang berperan menyeimbangkan kekuasaan tersebut adalah ....", opts: ["DPR dan Mahkamah Konstitusi","Gubernur","MPR daerah","KPU","Presiden sendiri"], ans: 0, exp: "Sistem check and balances (saling mengontrol) di Indonesia menempatkan DPR (legislatif) dan Mahkamah Konstitusi (yudikatif) sebagai penyeimbang kekuasaan eksekutif. DPR bisa melakukan pengawasan dan impeachment, MK bisa menguji konstitusionalitas kebijakan presiden." },
-    { q: "Potensi yang dapat terjadi jika pemerintah pusat terlalu dominan tanpa memperhatikan kepentingan daerah dalam sistem negara kesatuan adalah ....", opts: ["Munculnya kesadaran nasional yang tinggi","Meningkatnya rasa persatuan dan kesatuan","Terjadinya krisis ekonomi secara nasional","Tumbuhnya rasa cinta tanah air","Timbulnya gerakan separatisme di daerah"], ans: 4, exp: "Ketika daerah merasa tidak diperhatikan dan aspirasinya diabaikan, kekecewaan bisa berujung pada gerakan separatisme — keinginan untuk memisahkan diri. Inilah mengapa desentralisasi dan otonomi daerah penting dalam menjaga keutuhan NKRI." },
-    { q: "Perbedaan mendasar antara demokrasi Pancasila (musyawarah mufakat) dan demokrasi liberal (suara mayoritas) terletak pada ....", opts: ["Sistem ekonomi","Tujuan politik","Proses pengambilan keputusan","Jenis pemimpin negara","Lembaga legislatif"], ans: 2, exp: "Perbedaan utamanya ada pada cara mengambil keputusan. Demokrasi Pancasila menunggu hingga tercapai mufakat (semua setuju), sementara demokrasi liberal menggunakan voting — yang menang suara terbanyak. Ini berdampak pada kecepatan dan inklusivitas keputusan." },
-    { q: "Perbedaan sistem presidensial dan parlementer dalam hal pertanggungjawaban presiden/perdana menteri: dalam sistem presidensial presiden tidak bertanggung jawab kepada legislatif, karena ....", opts: ["Dalam sistem parlementer, presiden adalah kepala pemerintahan","Dalam sistem parlementer, presiden tidak dipilih rakyat","Dalam sistem parlementer, parlemen dapat menjatuhkan perdana menteri","Dalam sistem parlementer, presiden memiliki kekuasaan mutlak","Dalam sistem parlementer, rakyat tidak terlibat dalam pemilu"], ans: 2, exp: "Dalam sistem parlementer, perdana menteri (kepala pemerintahan) dipilih dari parlemen dan bertanggung jawab kepada parlemen. Parlemen bisa menjatuhkan perdana menteri melalui mosi tidak percaya. Inilah yang membedakannya dari presidensial di mana presiden dipilih langsung rakyat." },
-  ],
+  pkn:[
+  { "q": "SQL merupakan singkatan dari...", "opts": ["Structured Question Language", "Standard Query Language", "Structured Query Language", "Simple Query Language", "System Query Language"], "ans": 2, "exp": "SQL adalah singkatan dari Structured Query Language, yaitu bahasa standar yang digunakan untuk mengelola dan memanipulasi database relasional." },
+  { "q": "Perintah SQL yang digunakan untuk mengambil data dari database adalah...", "opts": ["INSERT", "UPDATE", "SELECT", "DELETE", "CREATE"], "ans": 2, "exp": "Perintah SELECT merupakan bagian dari Data Query Language (DQL) yang berfungsi untuk menampilkan atau mengambil data dari satu atau lebih tabel." },
+  { "q": "Perintah untuk menambahkan data ke dalam tabel adalah...", "opts": ["ADD", "INSERT", "INPUT", "CREATE", "UPDATE"], "ans": 1, "exp": "Perintah INSERT INTO digunakan untuk menyisipkan atau memasukkan baris data baru ke dalam tabel database." },
+  { "q": "Perintah SQL untuk mengubah data yang sudah ada adalah...", "opts": ["MODIFY", "UPDATE", "CHANGE", "EDIT", "ALTER"], "ans": 1, "exp": "Perintah UPDATE digunakan untuk memodifikasi atau memperbarui data (record) yang sudah tersimpan di dalam tabel." },
+  { "q": "Perintah SQL untuk menghapus data dari tabel adalah...", "opts": ["REMOVE", "DROP", "DELETE", "CLEAR", "ERASE"], "ans": 2, "exp": "Perintah DELETE digunakan untuk menghapus satu atau beberapa baris data dari sebuah tabel berdasarkan kondisi tertentu." },
+  { "q": "Perintah untuk membuat tabel baru dalam database adalah...", "opts": ["NEW TABLE", "CREATE TABLE", "MAKE TABLE", "ADD TABLE", "BUILD TABLE"], "ans": 1, "exp": "CREATE TABLE adalah perintah Data Definition Language (DDL) yang digunakan untuk mendefinisikan dan membuat tabel baru beserta kolom-kolomnya." },
+  { "q": "Perintah SQL untuk menghapus seluruh tabel beserta strukturnya adalah...", "opts": ["DELETE", "REMOVE", "DROP TABLE", "CLEAR TABLE", "ERASE TABLE"], "ans": 2, "exp": "Perintah DROP TABLE digunakan untuk menghapus tabel secara permanen dari database, termasuk seluruh struktur, kolom, dan data di dalamnya." },
+  { "q": "Fungsi klausa WHERE dalam SQL adalah...", "opts": ["Mengurutkan data", "Menyaring data", "Menghapus data", "Menambahkan data", "Menggabungkan tabel"], "ans": 1, "exp": "Klausa WHERE digunakan untuk menyaring (filter) baris data yang akan ditampilkan, diubah, atau dihapus berdasarkan kriteria/kondisi tertentu." },
+  { "q": "Perintah untuk mengurutkan data dalam SQL adalah...", "opts": ["SORT BY", "ORDER", "ORDER BY", "GROUP BY", "SORTING"], "ans": 2, "exp": "Klausa ORDER BY digunakan untuk mengurutkan hasil query, baik secara menaik (ASC) maupun menurun (DESC)." },
+  { "q": "Perintah untuk menampilkan data unik (tidak duplikat) adalah...", "opts": ["UNIQUE", "DISTINCT", "DIFFERENT", "ONLY", "SINGLE"], "ans": 1, "exp": "Kata kunci DISTINCT digunakan di dalam perintah SELECT untuk menghilangkan baris data yang duplikat dan hanya menampilkan nilai yang unik." },
+  { "q": "Perintah SQL untuk mengubah struktur tabel adalah...", "opts": ["MODIFY TABLE", "CHANGE TABLE", "ALTER TABLE", "UPDATE TABLE", "EDIT TABLE"], "ans": 2, "exp": "ALTER TABLE digunakan untuk mengubah atau memodifikasi struktur tabel yang sudah ada, seperti menambah, menghapus, atau mengubah tipe data kolom." },
+  { "q": "Perintah berikut yang digunakan untuk menambahkan kolom pada tabel adalah...", "opts": ["ADD COLUMN", "INSERT COLUMN", "CREATE COLUMN", "NEW COLUMN", "UPDATE COLUMN"], "ans": 0, "exp": "Untuk menambahkan kolom baru ke dalam tabel yang sudah ada, digunakan kombinasi perintah ALTER TABLE diikuti dengan klausa ADD COLUMN." },
+  { "q": "Fungsi COUNT() dalam SQL digunakan untuk...", "opts": ["Menghitung jumlah data", "Menjumlahkan nilai", "Mencari nilai maksimum", "Mencari nilai minimum", "Mengurutkan data"], "ans": 0, "exp": "COUNT() adalah fungsi agregasi yang digunakan untuk menghitung total jumlah baris atau record yang memenuhi kriteria tertentu." },
+  { "q": "Fungsi AVG() digunakan untuk...", "opts": ["Menghitung jumlah", "Menghitung rata-rata", "Menghitung maksimum", "Menghitung minimum", "Menghitung total data"], "ans": 1, "exp": "AVG() merupakan singkatan dari Average, yaitu fungsi agregasi untuk menghitung nilai rata-rata dari suatu kolom numerik." },
+  { "q": "Perintah GROUP BY digunakan untuk...", "opts": ["Mengurutkan data", "Mengelompokkan data", "Menghapus data", "Menambahkan data", "Menyaring data"], "ans": 1, "exp": "Klausa GROUP BY digunakan untuk mengelompokkan baris data yang memiliki nilai yang sama ke dalam satu baris ringkasan, biasanya dikombinasikan dengan fungsi agregasi." },
+  { "q": "Operator LIKE digunakan untuk...", "opts": ["Membandingkan angka", "Mencari pola tertentu", "Menghapus data", "Menambahkan data", "Mengurutkan data"], "ans": 1, "exp": "Operator LIKE digunakan bersama klausa WHERE untuk mencari baris data berdasarkan pola string atau teks tertentu (pattern matching)." },
+  { "q": "Tanda wildcard (%) dalam SQL berarti...", "opts": ["Satu karakter", "Tidak ada karakter", "Semua karakter", "Angka saja", "Huruf saja"], "ans": 2, "exp": "Tanda persen (%) bertindak sebagai wildcard yang mewakili nol, satu, atau beberapa karakter (semua karakter) saat melakukan pencarian string menggunakan operator LIKE." },
+  { "q": "Perintah LIMIT digunakan untuk...", "opts": ["Membatasi jumlah data yang ditampilkan", "Menghapus data", "Mengurutkan data", "Menggabungkan tabel", "Menambahkan data"], "ans": 0, "exp": "Klausa LIMIT digunakan untuk menentukan atau membatasi jumlah maksimum baris data yang akan dikembalikan oleh perintah SELECT." },
+  { "q": "Primary Key berfungsi untuk...", "opts": ["Menghubungkan tabel", "Menyimpan data", "Mengidentifikasi data secara unik", "Menghapus data", "Menyaring data"], "ans": 2, "exp": "Primary Key adalah sebuah kolom atau kombinasi kolom yang nilainya bersifat unik untuk mengidentifikasi setiap baris data secara spesifik dalam sebuah tabel." },
+  { "q": "Foreign Key digunakan untuk...", "opts": ["Menghapus data", "Menghubungkan antar tabel", "Menambah data", "Mengurutkan data", "Menyaring data"], "ans": 1, "exp": "Foreign Key (kunci sandang) adalah kolom yang merujuk pada Primary Key tabel lain, berfungsi untuk membangun hubungan (relasi) antar tabel." },
+  { "q": "HTML merupakan singkatan dari...", "opts": ["Hyperlinks Text Markup Language", "Hyper Text Markup Language", "High Text Markup Language", "Hyper Tool Markup Language", "Home Text Markup Language"], "ans": 1, "exp": "HTML singkatan dari Hyper Text Markup Language, bahasa markup standar yang digunakan untuk membuat dan menyusun struktur halaman web." },
+  { "q": "Tag dasar untuk membuat dokumen HTML adalah...", "opts": ["<body>", "<head>", "<html>", "<title>", "<meta>"], "ans": 2, "exp": "Tag <html> adalah tag utama atau root element yang membungkus seluruh konten dokumen HTML dari awal hingga akhir." },
+  { "q": "Tag yang digunakan untuk membuat paragraf adalah...", "opts": ["<p>", "<par>", "<pg>", "<text>", "<br>"], "ans": 0, "exp": "Tag <p> digunakan untuk mendefinisikan sebuah paragraf atau teks blok dalam dokumen HTML." },
+  { "q": "Tag untuk membuat judul terbesar adalah...", "opts": ["<h6>", "<heading>", "<head>", "<h1>", "<title>"], "ans": 3, "exp": "HTML menyediakan heading dari <h1> hingga <h6>, di mana tag <h1> menghasilkan ukuran teks judul paling besar dan utama." },
+  { "q": "Tag untuk membuat garis baru adalah...", "opts": ["<line>", "<break>", "<br>", "<hr>", "<new>"], "ans": 2, "exp": "Tag <br> singkatan dari Line Break, digunakan untuk membuat baris baru (pindah baris) tanpa memberikan spasi tambahan antar paragraf." },
+  { "q": "Atribut untuk memberikan link pada teks adalah...", "opts": ["src", "href", "link", "url", "action"], "ans": 1, "exp": "Atribut href (Hypertext Reference) diletakkan di dalam tag jangkar (anchor) untuk menentukan alamat URL tujuan dari link tersebut." },
+  { "q": "Tag untuk membuat hyperlink adalah...", "opts": ["<link>", "<a>", "<href>", "<url>", "<hyper>"], "ans": 1, "exp": "Tag <a> (Anchor) digunakan untuk membuat tautan atau hyperlink ke halaman web lain atau ke bagian lain dalam halaman yang sama." },
+  { "q": "Tag untuk menampilkan gambar adalah...", "opts": ["<image>", "<img>", "<pic>", "<src>", "<photo>"], "ans": 1, "exp": "Tag <img> digunakan untuk menyisipkan gambar ke dalam halaman web, merupakan tag kosong (tidak memerlukan tag penutup)." },
+  { "q": "Atribut src pada tag <img> berfungsi untuk...", "opts": ["Menentukan ukuran gambar", "Menentukan lokasi gambar", "Memberi judul gambar", "Mengatur warna gambar", "Menyimpan gambar"], "ans": 1, "exp": "Atribut src (source) berisi alamat/path lokasi berkas gambar yang ingin dimuat dan ditampilkan pada halaman web." },
+  { "q": "CSS digunakan untuk...", "opts": ["Membuat database", "Mengatur tampilan halaman web", "Membuat logika program", "Mengolah data", "Menyimpan file"], "ans": 1, "exp": "CSS bertanggung jawab untuk mendesain layout, mengatur tata letak, warna, font, dan elemen visual estetika lainnya dari halaman web." },
+  { "q": "CSS merupakan singkatan dari...", "opts": ["Computer Style Sheet", "Creative Style System", "Cascading Style Sheets", "Colorful Style Sheet", "Coding Style System"], "ans": 2, "exp": "CSS adalah singkatan dari Cascading Style Sheets, bahasa gaya yang digunakan untuk memisahkan konten (HTML) dari visualisasi halaman web." },
+  { "q": "Cara penulisan CSS yang benar adalah...", "opts": ["selector = property : value", "selector { property : value; }", "selector (property = value)", "selector : property = value", "selector { property = value }"], "ans": 1, "exp": "Sintaks dasar CSS terdiri dari selector diikuti kurung kurawal {}, properti dan nilainya dipisahkan oleh titik dua (:), serta diakhiri titik koma (;)." },
+  { "q": "Properti CSS untuk mengubah warna teks adalah...", "opts": ["background-color", "text-color", "color", "font-color", "text-style"], "ans": 2, "exp": "Properti color dalam CSS digunakan secara khusus untuk mengatur warna teks atau foreground dari sebuah elemen HTML." },
+  { "q": "Properti CSS untuk mengubah ukuran teks adalah...", "opts": ["font-size", "text-size", "size", "font-style", "text-font"], "ans": 0, "exp": "Properti font-size digunakan untuk mengatur ukuran huruf atau font, seperti menggunakan satuan px, em, rem, atau %." },
+  { "q": "Properti CSS untuk mengubah warna latar belakang adalah...", "opts": ["bg-color", "background", "background-color", "color-bg", "back-color"], "ans": 2, "exp": "Properti background-color digunakan khusus untuk menentukan atau mengubah warna latar belakang (background) suatu elemen." },
+  { "q": "Selector CSS untuk memilih elemen berdasarkan id adalah...", "opts": [". (titik)", "# (pagar)", "* (bintang)", "@ (at)", "& (dan)"], "ans": 1, "exp": "ID Selector dalam CSS didefinisikan dengan menggunakan tanda pagar (#) sebelum menuliskan nama ID elemen yang dituju." },
+  { "q": "Selector CSS untuk memilih elemen berdasarkan class adalah...", "opts": ["#", ".", "*", "@", ":"], "ans": 1, "exp": "Class Selector dalam CSS diwakili dengan tanda titik (.) sebelum nama class, digunakan untuk memilih semua elemen yang memiliki class tersebut." },
+  { "q": "Tag HTML untuk membuat daftar tidak berurutan adalah...", "opts": ["<ol>", "<ul>", "<li>", "<list>", "<dl>"], "ans": 1, "exp": "Tag <ul> singkatan dari Unordered List, digunakan untuk membuat daftar poin/bullet yang tidak memiliki urutan angka/alfabet." },
+  { "q": "Tag <li> digunakan untuk...", "opts": ["Membuat link", "Membuat list item", "Membuat gambar", "Membuat tabel", "Membuat paragraf"], "ans": 1, "exp": "Tag <li> singkatan dari List Item, diletakkan di dalam tag <ul> atau <ol> untuk merepresentasikan butir komponen dalam daftar." },
+  { "q": "Properti CSS text-align digunakan untuk...", "opts": ["Mengatur warna teks", "Mengatur posisi teks", "Mengatur ukuran teks", "Mengatur font", "Mengatur background"], "ans": 1, "exp": "Properti text-align digunakan untuk mengatur perataan posisi teks secara horizontal, seperti left, right, center, atau justify." },
+  { "q": "PBO merupakan singkatan dari...", "opts": ["Program Berbasis Objek", "Pemrograman Berbasis Online", "Pemrograman Berorientasi Objek", "Program Berorientasi Online", "Pemrograman Berbasis Operasi"], "ans": 2, "exp": "PBO dalam konteks rekayasa perangkat lunak adalah singkatan dari Pemrograman Berorientasi Objek (Object-Oriented Programming)." },
+  { "q": "Konsep utama dalam PBO adalah...", "opts": ["Fungsi", "Variabel", "Objek dan kelas", "Array", "Looping"], "ans": 2, "exp": "PBO berpusat pada pemodelan sistem nyata menggunakan struktur 'Kelas' sebagai cetak biru dan 'Objek' sebagai wujud nyatanya." },
+  { "q": "Class dalam PBO adalah...", "opts": ["Objek yang sudah jadi", "Cetak biru (blueprint) dari objek", "Variabel global", "Fungsi utama", "Program utama"], "ans": 1, "exp": "Class adalah rancangan, cetak biru (blueprint), atau template yang mendefinisikan karakteristik (atribut) dan perilaku (method) dari objek yang akan dibuat." },
+  { "q": "Objek adalah...", "opts": ["Program utama", "Variabel", "Instance dari class", "Fungsi", "Operator"], "ans": 2, "exp": "Objek adalah perwujudan nyata atau bentukan (instance) yang diciptakan dari sebuah struktur Class yang telah didefinisikan." },
+  { "q": "Properti dalam class disebut juga...", "opts": ["Method", "Atribut", "Fungsi", "Parameter", "Operator"], "ans": 1, "exp": "Properti merepresentasikan data atau karakteristik yang dimiliki oleh sebuah kelas, yang biasa disebut juga sebagai Atribut atau Field." },
+  { "q": "Method dalam PBO berfungsi untuk...", "opts": ["Menyimpan data", "Menjalankan aksi atau perilaku objek", "Menyimpan class", "Membuat variabel", "Menghapus objek"], "ans": 1, "exp": "Method merupakan fungsi atau prosedur internal kelas yang merepresentasikan aksi, operasi, tindakan, atau perilaku yang dapat dilakukan oleh objek." },
+  { "q": "Encapsulation adalah...", "opts": ["Pewarisan sifat", "Penyembunyian data", "Perulangan data", "Percabangan program", "Penghapusan data"], "ans": 1, "exp": "Encapsulation (pengkapsulan) adalah konsep menyembunyikan data internal objek dari akses luar langsung (menggunakan access modifier private) untuk menjaga keamanan data." },
+  { "q": "Inheritance dalam PBO berarti...", "opts": ["Pengulangan", "Pewarisan sifat dari class lain", "Penyimpanan data", "Percabangan", "Penghapusan data"], "ans": 1, "exp": "Inheritance adalah mekanisme pewarisan di mana sebuah subclass (kelas anak) dapat mewarisi atribut dan method dari superclass (kelas induk)." },
+  { "q": "Polymorphism adalah...", "opts": ["Satu objek memiliki banyak bentuk", "Satu variabel satu nilai", "Satu fungsi satu hasil", "Satu class satu objek", "Satu data satu tipe"], "ans": 0, "exp": "Polymorphism berarti banyak bentuk, yang memungkinkan suatu method atau objek untuk memiliki implementasi perilaku yang berbeda meskipun namanya sama (melalui overriding/overloading)." },
+  { "q": "Constructor adalah...", "opts": ["Method untuk menghapus objek", "Method yang dijalankan saat objek dibuat", "Method untuk mencetak data", "Method untuk perulangan", "Method untuk input data"], "ans": 1, "exp": "Constructor adalah method khusus yang otomatis dieksekusi pertama kali oleh program ketika sebuah objek baru di-instansiasi (dibuat)." }
+],
   bindo: [
-    { q: "Mengubah cerpen menjadi puisi berarti ...", opts: ["Menambah jumlah halaman cerpen","Memadatkan isi cerita menjadi larik-larik bermakna","Mengganti semua dialog dengan narasi","Mengubah tokoh cerita menjadi simbol","Memperpanjang alur cerita dengan rima"], ans: 1, exp: "Puisi adalah bentuk sastra yang padat — setiap kata dipilih dengan cermat. Saat mengubah cerpen menjadi puisi, kamu harus mengambil inti/esensi cerita, memilih kata kunci bermakna, lalu menyusunnya dalam larik-larik singkat yang berirama. Bukan menambah, tapi memadatkan." },
-    { q: "Dalam puisi, setiap baris disebut ...", opts: ["Bait","Larik","Sajak","Diksi","Majas"], ans: 1, exp: "Larik adalah istilah teknis untuk 'baris' dalam puisi. Satu larik memuat satu ide atau imaji utama. Beberapa larik yang berkelompok membentuk 'bait'. Jangan bingung antara larik (baris) dan bait (kelompok baris/stanza)." },
-    { q: "Pilihan kata yang tepat, indah, dan bermakna dalam puisi disebut ...", opts: ["Majas","Simbol","Diksi","Larik","Rima"], ans: 2, exp: "Diksi berasal dari bahasa Latin 'diction' yang berarti pilihan kata. Dalam puisi, diksi sangat penting karena satu kata bisa mengubah nuansa keseluruhan. Contoh: 'senja' lebih puitis dan kaya nuansa daripada sekadar 'sore'." },
-    { q: "Objek atau gambar yang mewakili makna lebih dalam dalam puisi disebut ...", opts: ["Diksi","Majas","Rima","Simbol","Intonasi"], ans: 3, exp: "Simbol adalah elemen puisi di mana suatu benda/gambar mewakili konsep yang lebih luas dan lebih dalam. Contoh: bunga layu = kesedihan, matahari = harapan, rantai = perbudakan. Simbol menambah kedalaman makna tanpa harus menyebutkan konsepnya secara langsung." },
-    { q: "Makna konotatif dalam puisi adalah ...", opts: ["Makna harfiah sebuah kata","Makna tidak harfiah yang tersembunyi di balik kata","Makna yang bisa dicari di kamus","Makna yang sama bagi semua pembaca","Makna yang ditulis pengarang secara eksplisit"], ans: 1, exp: "'Tangan besi' bukan berarti tangan dari logam besi — itu makna konotatif yang berarti 'kekuasaan yang keras/otoriter'. Makna konotatif adalah makna yang muncul di luar makna literal, terkait dengan asosiasi, budaya, dan konteks emosional." },
-    { q: "Pesan moral atau nilai yang ingin disampaikan penyair kepada pembaca disebut ...", opts: ["Tema","Suasana","Amanat","Diksi","Simbol"], ans: 2, exp: "Amanat adalah pesan moral, nasihat, atau nilai kehidupan yang ingin disampaikan penyair. Cara menemukannya: baca puisi secara keseluruhan, renungkan nilai kehidupan apa yang paling menonjol. Amanat bisa tersurat (langsung dinyatakan) atau tersirat (tersembunyi dalam makna)." },
-    { q: "Gagasan pokok atau inti dari sebuah puisi disebut ...", opts: ["Suasana","Amanat","Larik","Tema","Bait"], ans: 3, exp: "Tema adalah ide sentral atau gagasan pokok yang mendasari seluruh puisi. Tema bisa berupa cinta, kepahlawanan, alam, kemanusiaan, dll. Tema berbeda dari amanat: tema adalah TOPIK, amanat adalah PESAN/PELAJARAN yang diambil dari topik tersebut." },
-    { q: "Teknik pembacaan puisi yang mengatur naik-turunnya nada suara sesuai makna larik disebut ...", opts: ["Tempo","Jeda","Ekspresi","Intonasi","Volume"], ans: 3, exp: "Intonasi adalah pengaturan nada suara — naik, turun, atau datar — sesuai dengan makna dan emosi larik. Intonasi yang tepat membuat pendengar memahami perasaan dan makna yang terkandung. Berbeda dari volume (keras-lembut) dan tempo (cepat-lambat)." },
-    { q: "Kesalahan dalam penulisan puisi yang membuat makna terganggu adalah ...", opts: ["Penggunaan imaji yang kuat","Pemilihan diksi yang tepat","Rima yang dipaksakan sehingga makna terganggu","Larik yang singkat dan padat","Tema yang jelas dan konsisten"], ans: 2, exp: "Rima yang dipaksakan adalah salah satu kesalahan fatal dalam puisi. Demi mempertahankan rima (persamaan bunyi), penyair mengorbankan makna — menggunakan kata yang tidak sesuai hanya karena bunyinya mirip. Ini merusak kualitas puisi karena makna jauh lebih penting dari rima." },
-    { q: "Unsur drama yang menggerakkan cerita melalui percakapan antartokoh adalah ...", opts: ["Konflik","Dialog","Latar","Amanat","Tokoh"], ans: 1, exp: "Dialog adalah percakapan antartokoh yang menjadi 'mesin penggerak' cerita drama. Melalui dialog, informasi disampaikan, karakter diperkenalkan, dan konflik berkembang. Tanpa dialog, drama tidak bisa berjalan — karena drama didefinisikan sebagai cerita yang disampaikan melalui percakapan." },
-    { q: "Bagian struktur drama yang menampilkan puncak ketegangan atau konflik tertinggi disebut ...", opts: ["Eksposisi","Komplikasi","Klimaks","Resolusi","Epilog"], ans: 2, exp: "Klimaks adalah titik puncak ketegangan dalam cerita — momen di mana konflik mencapai intensitas tertinggi sebelum mulai terurai. Setelah klimaks, cerita bergerak menuju resolusi (penyelesaian). Tanpa klimaks yang kuat, drama terasa datar dan tidak memukau." },
-    { q: "Kemampuan aktor beradaptasi secara spontan saat terjadi kesalahan di atas panggung disebut ...", opts: ["Properti","Improvisasi","Teknik vokal","Penghayatan","Stage direction"], ans: 1, exp: "Improvisasi adalah kemampuan beradaptasi secara spontan dan kreatif di luar naskah. Ketika terjadi kesalahan (lupa teks, properti jatuh, dll.), aktor yang terampil mengimprovisasi agar pertunjukan tetap berjalan mulus tanpa penonton menyadarinya." },
-    { q: "Jenis drama yang berakhir dengan kesedihan atau kematian tokoh utama disebut ...", opts: ["Komedi","Pantomim","Melodrama","Tragedi","Opera"], ans: 3, exp: "Tragedi adalah genre drama klasik di mana tokoh utama (biasanya bangsawan atau pahlawan) jatuh karena cacat karakter, takdir, atau kekuatan di luar kendalinya, dan berakhir dengan kesedihan atau kematian. Contoh: Romeo dan Juliet, Hamlet. Kebalikannya adalah komedi yang berakhir bahagia." },
-    { q: "Ciri yang membedakan naskah drama dengan teks cerpen adalah ...", opts: ["Drama ditulis dalam bentuk paragraf narasi","Drama memiliki sudut pandang orang pertama yang konsisten","Drama memiliki petunjuk lakuan (stage direction)","Drama tidak memiliki tokoh dan konflik","Drama selalu lebih panjang dari cerpen"], ans: 2, exp: "Petunjuk lakuan (stage direction) adalah instruksi dalam kurung atau cetak miring yang menjelaskan gerakan, ekspresi, latar, dan kondisi panggung. Ini hanya ada dalam naskah drama, bukan cerpen atau novel. Cerpen menggunakan narasi untuk menyampaikan hal yang sama." },
-    { q: "Bagian karya ilmiah yang berisi ringkasan keseluruhan penelitian adalah ...", opts: ["Pendahuluan","Tinjauan Pustaka","Abstrak","Kesimpulan","Metode Penelitian"], ans: 2, exp: "Abstrak adalah ringkasan padat dari seluruh penelitian — mencakup latar belakang singkat, tujuan, metode, hasil utama, dan kesimpulan — biasanya 150-250 kata. Ini adalah bagian pertama yang dibaca calon pembaca untuk memutuskan apakah penelitian relevan dengan kebutuhan mereka." },
-    { q: "Dugaan sementara yang akan diuji melalui penelitian disebut ...", opts: ["Kesimpulan","Abstrak","Metode","Hipotesis","Tinjauan Pustaka"], ans: 3, exp: "Hipotesis adalah pernyataan dugaan yang bisa diuji secara empiris. Contoh: 'Diduga penggunaan media video meningkatkan minat baca siswa.' Hipotesis harus spesifik, dapat diuji, dan bisa dibuktikan benar atau salah melalui penelitian." },
-    { q: "Bahasa yang digunakan dalam karya ilmiah harus bersifat ...", opts: ["Konotatif dan emosional","Subjektif dan penuh pendapat pribadi","Objektif, denotatif, dan menggunakan kata baku","Informal dan mudah dipahami semua kalangan","Puitis dan mengandung majas"], ans: 2, exp: "Bahasa ilmiah harus: (1) objektif — berdasarkan fakta, tidak memihak; (2) denotatif — makna lugas, tidak ambigu; (3) menggunakan kata baku sesuai KBBI. Ini menjamin karya ilmiah bisa dipahami secara universal dan tidak menimbulkan interpretasi ganda." },
-    { q: "Mengambil karya atau ide orang lain tanpa menyebut sumber disebut ...", opts: ["Parafrase","Kutipan langsung","Plagiarisme","Tinjauan pustaka","Sitasi"], ans: 2, exp: "Plagiarisme adalah pelanggaran etika akademik serius — mengklaim karya orang lain sebagai milik sendiri tanpa memberikan kredit. Ini berlaku untuk kata-kata, ide, data, maupun gambar. Solusinya: selalu cantumkan sumber, baik untuk kutipan langsung maupun parafrase." },
-    { 
-        q: "Kombinasi elemen yang tidak selaras antara tema perjuangan dan suasana yang dihasilkan dalam puisi ditunjukkan oleh...", 
-        opts: ["Tema perjuangan dengan suasana semangat", "Tema perjuangan dengan suasana penuh ketakutan dan putus asa", "Tema alam dengan suasana sunyi", "Tema cinta dengan suasana haru", "Tema kemanusiaan dengan suasana sedih"], 
-        ans: 1, 
-        exp: "Penilaian kesesuaian elemen puisi mengharuskan tema, suasana, dan isi saling mendukung. Jika sebuah puisi bertema perjuangan namun menghasilkan suasana ketakutan dan putus asa yang dominan tanpa pesan kebangkitan, maka elemen tersebut dinilai tidak selaras karena puisi perjuangan idealnya bersuasana semangat atau tegas." 
-    },
-    { 
-        q: "Perhatikan kalimat berikut: 'Penelitian ini keren banget dan hasilnya mengejutkan!' Kalimat tersebut tidak baku untuk karya ilmiah karena...", 
-        opts: ["Menggunakan istilah keilmuan yang terlalu rumit", "Bersifat objektif dan menggunakan kata denotatif", "Menggunakan kata tidak baku dan bermakna konotatif/emosional", "Strukturnya terlalu sistematis", "Kalimatnya terlalu efektif dan singkat"], 
-        ans: 2, 
-        exp: "Bahasa ilmiah harus bersifat objektif, denotatif, dan menggunakan kata baku sesuai KBBI. Kata 'keren banget' dan 'mengejutkan' bersifat informal, subjektif, serta emosional. Kalimat ilmiah yang benar contohnya: 'Penelitian ini menunjukkan hasil yang signifikan secara statistik.'" 
-    },
-    { 
-        q: "Manakah yang merupakan kriteria penulisan karya ilmiah yang baik dan benar?", 
-        opts: ["Subjektif, imajinatif, dan menggunakan bahasa puitis", "Sistematis, objektif, akurat, jelas, konsisten, etis, dan dapat diverifikasi", "Menggunakan rima yang dipaksakan dan diksi klise", "Hanya berisi opini pribadi tanpa data pendukung", "Ditulis dalam bentuk dialog dengan petunjuk lakuan"], 
-        ans: 1, 
-        exp: "Karya ilmiah yang baik harus memenuhi kriteria: Sistematis (struktur logis), Objektif (berdasarkan fakta), Akurat (data valid), Jelas (tidak ambigu), Konsisten (format seragam), Etis (mencantumkan sumber/tidak plagiat), dan Dapat diverifikasi (bisa diuji ulang)." 
-    }
-  ],
- sejarah: [
-    {
-      q: "Sejak 1943 Jepang mengerahkan romusa terutama untuk laki-laki di perdesaan. Dampak tindakan Jepang tersebut terhadap perekonomian desa di Indonesia adalah ....",
-      opts: [
-        "Perekonomian desa tidak berubah signifikan akibat pengerahan romusa",
-        "Perekonomian desa mengalami kemajuan pesat berkat kerja keras romusa",
-        "Perekonomian desa menjadi terganggu karena banyak petani menjadi romusa",
-        "Perekonomian desa menjadi lebih kuat karena ada lebih banyak pekerja yang tersedia",
-        "Perekonomian desa menjadi lebih mandiri karena romusa membawa keterampilan industri"
-      ],
-      ans: 2,
-      exp: "Pengerahan tenaga romusa secara besar-besaran dari area perdesaan menguras tenaga kerja produktif (terutama petani laki-laki). Akibatnya, lahan pertanian menjadi terbengkalai dan ketahanan pangan serta perekonomian desa hancur."
-    },
-    {
-      q: "Kolonel Sudirman dipilih menjadi pemimpin dalam pertempuran Ambarawa untuk menggantikan Kolonel Isdiman. Kolonel Sudirman memimpin pertempuran Ambarawa dengan cara ....",
-      opts: [
-        "Menerapkan strategi perang Supit Urang",
-        "Menarik mundur pasukan ke hutan-hutan",
-        "Menggempur benteng Sekutu di Ambarawa",
-        "Meminta bantuan Tentara Keamanan Rakyat",
-        "Mengepung tangsi-tangsi Sekutu di Magelang."
-      ],
-      ans: 0,
-      exp: "Kolonel Sudirman menerapkan strategi Supit Urang (pengepungan ganda dari kedua sisi) untuk menjepit kedudukan tentara Sekutu hingga mereka benar-benar terisolasi dan terpaksa mundur dari Ambarawa."
-    },
-    {
-      q: "Tujuan utama operasi “bumi hangus” terhadap Kota Bandung adalah ....",
-      opts: [
-        "Menghancurkan gudang-gudang amunisi milik Sekutu",
-        "Mengacaukan strategi militer Sekutu yang telah disusun rapi",
-        "Mencegah Kota Bandung dijadikan basis militer atau markas Sekutu",
-        "Menunjukkan kepada Sekutu bahwa Indonesia bisa menunjukkan perlawanan",
-        "Menunjukkan kepada dunia internasional bahwa Indonesia merdeka tak bisa diganggu gugat lagi"
-      ],
-      ans: 2,
-      exp: "Operasi bumi hangus dilakukan oleh para pejuang agar sarana, bangunan vital, dan fasilitas militer di Bandung Selatan tidak dapat dimanfaatkan oleh tentara Sekutu dan NICA sebagai markas strategis mereka."
-    },
-    {
-      q: "Perang Margarana dikenal dengan istilah perang puputan. Istilah puputan mengandung arti ....",
-      opts: [
-        "Perang demi kehormatan keluarga",
-        "Perang di lapangan terbuka, bukan perang gerilya",
-        "Bunuh diri massal saat hendak ditangkap belanda",
-        "Perang sampai mati dan tidak mau menyerahkan diri kepada musuh",
-        "Menyerang musuh lalu lari sehingga musuh kehilangan semangat untuk berperang"
-      ],
-      ans: 3,
-      exp: "Puputan berasal dari kata puput (habis) dalam bahasa Bali. Artinya adalah bertempur habis-habisan sampai titik darah penghabisan demi kehormatan bangsa dan menolak menyerah kepada penjajah."
-    },
-    {
-      q: "Peristiwa 10 November 1945 di Surabaya terjadi karena adanya ultimatum Sekutu. Isi ultimatum tersebut, yaitu ....",
-      opts: [
-        "Rakyat Surabaya harus menerima kembalinya pemerintahan Belanda",
-        "Pelarangan pengibaran bendera Merah Putih di tempat umum",
-        "Seluruh pasukan bentukan Jepang harus segera dibubarkan",
-        "Rakyat tidak diperbolehkan membentuk barisan perjuangan",
-        "Para pemimpin dan rakyat Surabaya harus menyerah kepada Sekutu"
-      ],
-      ans: 4,
-      exp: "Ultimatum yang dikeluarkan oleh Mayor Jenderal Mansergh menuntut agar seluruh pimpinan dan pemuda bersenjata di Surabaya menyerahkan diri beserta senjatanya ke tempat yang ditentukan paling lambat tanggal 10 November 1945 pagi."
-    },
-    {
-      q: "Belum lama pemerintahan berjalan, ibu kota Republik Indonesia harus dipindahkan ke Yogyakarta. Pemindahan ibu kota negara dilakukan dengan tujuan ....",
-      opts: [
-        "Menghindari serangan pasukan Jepang",
-        "Mengalihkan perhatian tentara Sekutu",
-        "Mengamankan pejabat negara dari Sekutu",
-        "Mengamankan pemerintahan republik dari gangguan NICA",
-        "Mengikuti saran dari sejumlah tokoh dan Sri Sultan Hamengkubuwono IX"
-      ],
-      ans: 3,
-      exp: "Kondisi keamanan Jakarta pada awal tahun 1946 menjadi sangat rawan akibat teror dan intimidasi yang dilancarkan oleh tentara NICA Belanda, sehingga demi kelangsungan negara, ibu kota dipindahkan ke Yogyakarta yang lebih aman."
-    },
-    {
-      q: "Peran dan nilai positif yang dapat diteladani dari tokoh Bung Tomo dalam peristiwa pertempuran Surabaya adalah ....",
-      opts: [
-        "Mengobarkan semangat cinta tanah air untuk melawan Sekutu",
-        "Menanamkan nilai-nilai cinta damai dalam perjuangan",
-        "Mengajarkan sikap rela berkorban demi kemederkaan bangsa",
-        "Menerapkan sikap saling menghargai dalam perjuangan",
-        "Mengembangkan sikap kerja sama dengan pemerintah"
-      ],
-      ans: 0,
-      exp: "Melalui siaran radio pemberontakan, pidato Bung Tomo yang berapi-api berhasil membakar dan mengobarkan semangat heroisme serta cinta tanah air arek-arek Suroboyo untuk gigih mempertahankan kemerdekaan."
-    },
-    {
-      q: "Insiden Bendera di Hotel Yamato Surabaya pada tanggal 19 September 1945 memperlihatkan bahwa para pemuda memiliki ....",
-      opts: [
-        "Persenjataan memadai yang diperoleh dari Jepang",
-        "Dana besar yang diperoleh dari rakyat",
-        "Dukungan besar dari negara tetangga",
-        "Rasa dendam yang mendalam kepada Sekutu",
-        "Semangat juang yang tinggi dalam membela negara"
-      ],
-      ans: 4,
-      exp: "Aksi nekat para pemuda menaiki tiang Hotel Yamato dan merobek warna biru dari bendera Belanda membuktikan besarnya kedaulatan mental dan semangat juang demi tegaknya bendera Merah Putih."
-    },
-    {
-      q: "Diinjak-injaknya lencana Merah Putih oleh anggota pasukan NICA di Hotel Jalan Bali, Medan menjadi salah satu penyebab terjadinya peristiwa ....",
-      opts: [
-        "Bandung Lautan Api",
-        "Pertempuran Ambarawa",
-        "Pertempuran Lima Hari di Semarang",
-        "Insiden Bendera Hotel Yamato",
-        "Pertempuran Medan Area"
-      ],
-      ans: 4,
-      exp: "Aksi provokatif tentara NICA yang merampas dan menginjak-injak lencana Merah Putih milik pemuda Indonesia memicu kemarahan besar hingga memantik meletusnya Pertempuran Medan Area pada 13 Oktober 1945."
-    },
-    {
-      q: "Konflik yang terjadi antara pemuda dan tentara Sekutu di Kota Medan disebabkan oleh ....",
-      opts: [
-        "Pelucutan senjata Jepang oleh para pemuda Medan",
-        "Tentara Sekutu mempersenjatai tawanan Belanda",
-        "Keputusan pemerintah pusat mengambil jalur diplomasi",
-        "Ultimatum kepada pemuda agar menyerahkan tawanan Jepang",
-        "Kampanye kelompok komunis untuk mengambil alih kekuasaan"
-      ],
-      ans: 1,
-      exp: "Selain insiden lencana, ketegangan dipicu oleh tindakan pasukan Sekutu yang membebaskan para bekas tawanan perang Belanda (KNIL) dan langsung mempersenjatai mereka untuk membentuk satuan militer kembali."
-    },
-    {
-      q: "Isi utama Piagam Atlantik (Atlantic Charter) yang berkaitan dengan semangat proklamasi Indonesia adalah ....",
-      opts: [
-        "Penyatuan wilayah koloni dengan negara penjajah",
-        "Larangan menyebarkan informasi tentang kemerdekaan",
-        "Pengakuan atas hak setiap bangsa untuk merdeka dan menentukan nasib sendiri",
-        "Pembentukan organisasi ekonomi regional",
-        "Pembagian wilayah kekuasaan pascaperang"
-      ],
-      ans: 2,
-      exp: "Salah satu poin penting Atlantic Charter (1941) memuat hak menentukan nasib sendiri (*right of self-determination*) bagi setiap bangsa, yang menjadi landasan moral internasional bagi kemerdekaan Indonesia."
-    },
-    {
-      q: "Tokoh yang menyelundupkan teks proklamasi ke Kantor Berita Domei adalah ....",
-      opts: [
-        "Soekarman",
-        "Maladi",
-        "Waidan B. Palenewan",
-        "Sjahruddin",
-        "F. Wuz"
-      ],
-      ans: 3,
-      exp: "Sjahruddin, seorang wartawan Domei, berhasil melompati pagar dan menyelinap masuk ke kantor berita untuk menyerahkan teks proklamasi agar segera disiarkan ke seluruh dunia secara sembunyi-sembunyi."
-    },
-    {
-      q: "Strategi pemerintah agar tidak mengundang aksi militer dari negara lain maka awal merdeka membentuk BKR. Dalam perkembangannya, pembentukan tentara nasional dianggap perlu karena ....",
-      opts: [
-        "Banyak kalangan yang tidak setuju pembentukan BKR",
-        "BKR merupakan bagian dari badan penolong keluarga perang",
-        "Anggota BKR terdiri atas bekas anggota Peta, Heiho, dan laskar",
-        "Pemerintahan yang resmi memerlukan adanya tentara untuk menjaga keamanan negara",
-        "Timbulnya pemberontakan yang tidak dapat dihindarkan antara rakyat dan Sekutu yang datang"
-      ],
-      ans: 4,
-      exp: "Kedatangan pasukan Sekutu yang diboncengi NICA memicu pertempuran fisik di berbagai daerah. Kondisi genting ini memaksa pemerintah mengubah badan penolong menjadi tentara resmi (TKR) guna mempertahankan kedaulatan."
-    },
-    {
-      q: "Pertempuran Medan Area merupakan perjuangan mempertahankan kemerdekaan yang terjadi di beberapa titik Kota Medan. Usaha TKR untuk menjadikan pasukan yang bertempur lebih terorganisasi adalah ....",
-      opts: [
-        "Meminta bantuan persenjataan dari TKR Pusat",
-        "Menggabungkan semua laskar yang berada di Medan",
-        "Memusatkan kekuatan dan komando pada TKR Medan",
-        "Membentuk Komando Resimen Laskar Rakyat Medan Area",
-        "Membentuk laskar perjuangan rakyat yang menampung para pejuang"
-      ],
-      ans: 3,
-      exp: "Pada Desember 1945, para tokoh pemuda dan militer berkumpul untuk membentuk 'Komando Resimen Laskar Rakyat Medan Area' agar koordinasi perlawanan terhadap Sekutu dan NICA berjalan satu komando."
-    },
-    {
-      q: "Pada tanggal 15 September 1945, pasukan Sekutu datang ke Indonesia yang mendarat di ....",
-      opts: [
-        "Tanjung Priok",
-        "Banten",
-        "Surabaya",
-        "Semarang",
-        "Palembang"
-      ],
-      ans: 0,
-      exp: "Rombongan awal pasukan Sekutu (termasuk komando AFNEI) pertama kali berlabuh di pelabuhan Tanjung Priok, Jakarta menggunakan kapal HMS Cumberland dipimpin oleh Laksamana Muda Patterson."
-    },
-    {
-      q: "Pada awal kemerdekaan, pemerintah sengaja tidak membentuk tentara nasional karena ....",
-      opts: [
-        "Para pemuda belum siap menjadi tentara",
-        "Tentara jepang masih berkuasa di indonesia",
-        "Pasukan sekutu belum datang ke indonesia",
-        "Dari segi persenjataan, indonesia belum layak membentuk tentara nasional",
-        "Tidak mau memancing kekuatan asing yang berada di Indonesia"
-      ],
-      ans: 4,
-      exp: "Pemerintah RI memilih diplomasi damai pada masa transisi kekuasaan dan menghindari bentrokan bersenjata dini dengan tentara Jepang maupun Sekutu yang ditugaskan menjaga status quo."
-    },
-    {
-      q: "Maklumat pemerintah yang berisi tentang pembentukan partai politik dikeluarkan pada tanggal ....",
-      opts: [
-        "12 November 1945",
-        "3 November 1945",
-        "12 September 1945",
-        "3 September 1945",
-        "13 November 1945"
-      ],
-      ans: 1,
-      exp: "Maklumat Pemerintah 3 November 1945 ditandatangani oleh Wakil Presiden Moh. Hatta dengan tujuan memberikan kebebasan bagi rakyat untuk mendirikan partai politik sebagai pilar demokrasi."
-    },
-    {
-      q: "Dalam sidang PPKI tanggal 18 Agustus 1945, Otto Iskandardinata mengusulkan ....",
-      opts: [
-        "Penandatanganan naskah proklamasi oleh Soekarno-Hatta",
-        "Memberikan istilah UUD 1945",
-        "Menetapkan Ir. Soekarno dan Moh. Hatta sebagai Presiden dan Wakil Presiden",
-        "Dibentuknya Komite Nasional sebagai pembantu Presiden",
-        "Membubarkan PPKI karena bentukan Jepang"
-      ],
-      ans: 2,
-      exp: "Secara aklamasi, Otto Iskandardinata mengusulkan pemilihan Ir. Soekarno sebagai Presiden dan Drs. Moh. Hatta sebagai Wakil Presiden RI pertama, yang langsung disetujui oleh seluruh anggota sidang."
-    },
-    {
-      q: "Kabinet parlementer pertama yang dibentuk pada awal kemerdekaan dipimpin oleh Perdana Menteri ....",
-      opts: [
-        "Mohammad Hatta",
-        "Ir. Soekarno",
-        "Amir Sjarifuddin",
-        "Sutan Sjahrir",
-        "Ali Sastroamidjojo"
-      ],
-      ans: 3,
-      exp: "Sutan Sjahrir ditunjuk memimpin kabinet parlementer pertama (Kabinet Sjahrir I) setelah adanya perubahan sistem pemerintahan dari presidensial ke parlementer melalui Maklumat 14 November 1945."
-    },
-    {
-      q: "Bung Tomo memiliki peranan besar dalam peristiwa 10 November 1945. Peranannya adalah membakar semangat rakyat Surabaya dalam hal ....",
-      opts: [
-        "Memperjuangkan Hotel Yamato",
-        "Memperbaiki kehidupan rakyat",
-        "Mempertahankan kemerdekaan RI",
-        "Mengusir masuknya liberalisme",
-        "Upaya mencapai kemerdekaan"
-      ],
-      ans: 2,
-      exp: "Peran vital Bung Tomo berada pada fase mempertahankan kemerdekaan RI yang sudah diproklamasikan, guna melawan gempuran militer masif dari tentara Sekutu/Inggris."
-    },
-    {
-      q: "Setelah dilakukan penetapan dasar negara langkah selanjutnya adalah pembentukan alat kelengkapan pemerintah Indonesia. Hal tersebut dianggap penting karena ....",
-      opts: [
-        "Menjalankan pemerintah Indonesia",
-        "Mengoptimalkan peran dan fungsi lembaga PPKI",
-        "Meyakinkan kepada pihak Sekutu bahwa telah berdiri Negara Republik Indonesia",
-        "Indonesia akan segera mendapatkan pengakuan, baik secara de facto maupun de jure",
-        "Menghindari campur tangan Sekutu dan Belanda dalam pendirian Negara Republik Indonesia"
-      ],
-      ans: 0,
-      exp: "Sebuah negara yang berdaulat membutuhkan struktur birokrasi, kementerian, wilayah pembagian, dan aparat keamanan agar roda administrasi pemerintahan dapat berjalan secara riil."
-    },
-    {
-      q: "RIS tidak dapat bertahan lama karena ....",
-      opts: [
-        "Sebagian besar rakyat menghendaki negara kesatuan Indonesia",
-        "Sebagian besar rakyat tidak memikirkan keadaan negara",
-        "Kabinet RIS terdiri atas orang-orang yang tidak ahli",
-        "Negara RIS tidak memiliki sistem kepartaian",
-        "Negara RIS segera dibubarkan oleh Belanda"
-      ],
-      ans: 0,
-      exp: "Bentuk negara federal RIS dianggap sebagai taktik adu domba ciptaan Belanda (Van Mook). Mayoritas rakyat dan negara bagian menuntut kembali ke bentuk Negara Kesatuan (NKRI)."
-    },
-    {
-      q: "Pasukan Sekutu mendarat di Indonesia dengan komando khusus yang diberi nama AFNEI. Pasukan Sekutu di Indonesia dipimpin oleh ....",
-      opts: [
-        "Lord Louis Mountbatten",
-        "Jenderal W.R. Patterson",
-        "Mayor A.G. Greenhalgh",
-        "Letjen Sir Philip Christison",
-        "Mayjen Mansergh"
-      ],
-      ans: 3,
-      exp: "AFNEI (Allied Forces Netherlands East Indies) dipimpin oleh Letnan Jenderal Sir Philip Christison, yang bertugas menerima penyerahan tentara Jepang dan membebaskan tawanan perang."
-    },
-    {
-      q: "Pada tanggal 5 Oktober 1945 terjadi perubahan dalam organisasi militer di Indonesia. Pemerintah Republik Indonesia secara resmi mendirikan sebuah organisasi tentara nasional yang pertama bernama ....",
-      opts: [
-        "Angkatan Bersenjata Republik Indonesia",
-        "Tentara Keamanan Rakyat",
-        "Tentara Nasional Indonesia",
-        "Tentara Rakyat Indonesia",
-        "Tentara Republik Indonesia"
-      ],
-      ans: 1,
-      exp: "Melalui Maklumat Pemerintah tanggal 5 Oktober 1945, Badan Keamanan Rakyat (BKR) ditingkatkan fungsinya menjadi Tentara Keamanan Rakyat (TKR) sebagai wadah resmi militer Indonesia."
-    },
-    {
-      q: "Suatu negara membutuhkan pengakuan dari negara lain karena ....",
-      opts: [
-        "Dijadikan landasan hukum internasional",
-        "Menjadi syarat utama berdirinya suatu negara",
-        "Agar dapat berpartisipasi menjalin kerja sama antarnegara",
-        "Memperluas jaringan yang sudah dibangun sejak awal kemerdekaan",
-        "Agar negara yang baru merdeka tidak terasing dari pergaulan internasional"
-      ],
-      ans: 4,
-      exp: "Pengakuan dari negara lain secara de facto dan de jure berfungsi agar suatu negara berdaulat sah secara internasional dan tidak terisolasi dalam hubungan diplomatik antarbangsa."
-    },
-    {
-      q: "Berbagai pergolakan yang terjadi di Indonesia. Salah satunya, yaitu Pertempuran Ambarawa. Meletusnya Pertempuran Ambarawa disebabkan oleh ....",
-      opts: [
-        "Rakyat Ambarawa dipaksa kerja rodi",
-        "Rakyat Ambarawa dilarang mengibarkan bendera Merah Putih",
-        "Sekutu menyimpang dari tugas pokoknya untuk membebaskan tawanan perang dan sengaja membekali mereka senjata",
-        "Rakyat Ambarawa dilarang memperingati Proklamasi Kemerdekaan Indonesia",
-        "Tewasnya Letkol Isdiman yang merupakan prajurit kepercayaan dari Kolonel Soedirman"
-      ],
-      ans: 2,
-      exp: "Insiden pecah di Magelang dan Ambarawa karena Sekutu menyalahgunakan misi kemanusiaan dengan mempersenjatai mantan tawanan Belanda (NICA) yang baru dibebaskan dari kamp tahanan."
-    },
-    {
-      q: "Penyebab utama terjadinya pertempuran Medan Area setelah proklamasi kemerdekaan adalah ....",
-      opts: [
-        "Adanya kesepakatan antara Jepang dan Belanda untuk membagi wilayah Sumatra",
-        "Diketahuinya bahwa Medan akan dijadikan markas utama Belanda",
-        "Ketegangan antara rakyat dengan tentara Sekutu yang mengawal NICA kembali masuk ke wilayah Indonesia",
-        "Rakyat Medan tidak puas terhadap pemerintah pusat di Jakarta",
-        "Pemerintah Indonesia memerintahkan langsung penyerangan terhadap pasukan Inggris"
-      ],
-      ans: 2,
-      exp: "Akar permasalahan di Medan dipicu oleh sikap arogan pasukan Sekutu dan agen NICA Belanda yang berniat menegakkan kembali kekuasaan kolonial di Sumatra Utara."
-    },
-    {
-      q: "Faktor utama yang mendorong negara-negara Asia dan Arab memberikan pengakuan awal terhadap kemerdekaan Indonesia adalah karena ....",
-      opts: [
-        "Mereka memiliki kepentingan ekonomi di Indonesia",
-        "Mereka memiliki hubungan diplomatik sejak masa VOC",
-        "Solidaritas sebagai sesama negara yang pernah dijajah dan semangat anti-kolonialisme",
-        "Tekanan dari Perserikatan Bangsa-Bangsa (PBB)",
-        "Takut terhadap pengaruh komunis di Asia Tenggara"
-      ],
-      ans: 2,
-      exp: "Negara seperti Mesir, India, dan negara Arab lainnya memberikan dukungan kuat karena adanya persamaan nasib rasa senasib sepenanggungan sebagai bangsa terjajah serta ikatan keagamaan/kultural."
-    },
-    {
-      q: "Dalam pertempuran Margarana, I Gusti Ngurah Rai beserta pasukannya menggunakan strategi puputan. Akan tetapi, strategi ini tidak berhasil mengalahkan pasukan Belanda karena ....",
-      opts: [
-        "Pasukan Belanda didukung oleh tentara Gurkha",
-        "Pasukan TKR di Bali membelot dari I Gusti Ngurah Rai",
-        "Strategi pasukan Belanda lebih efektif daripada strategi pasukan TRI",
-        "Pasukan KNIL menolak untuk membantu TRI melawan Belanda",
-        "Kekuatan pasukan TRI di Bali tidak sepadan dengan kekuatan pasukan Belanda"
-      ],
-      ans: 4,
-      exp: "Meskipun bertempur dengan heroik, pasukan Ciung Wanara kalah jumlah dan persenjataan karena Belanda mengepung mereka secara total memanfaatkan serangan udara dan infanteri modern."
-    },
-    {
-      q: "Reaksi rakyat Indonesia pertama kali ketika kedatangan pasukan Sekutu pasca-kemerdekaan RI adalah ....",
-      opts: [
-        "Menyambut dengan baik",
-        "Mengangkat senjata",
-        "Mengusir dari wilayah ri",
-        "Melaporkan kepada dewan keamanan pbb",
-        "Menembaki pasukan sekutu"
-      ],
-      ans: 0,
-      exp: "Pada mulanya, kedatangan Sekutu disambut terbuka dan kooperatif karena misinya dianggap murni kemanusiaan, sebelum akhirnya ketahuan bahwa mereka diboncengi NICA."
-    },
-    {
-      q: "Tujuan utama dari pemberontakan DI/TII yang dipimpin oleh Kartosuwiryo di Jawa Barat adalah ....",
-      opts: [
-        "Memperjuangkan kemerdekaan Indonesia dari penjajahan Belanda",
-        "Menggulingkan pemerintahan Soekarno dan mengganti dengan sistem monarki",
-        "Memperjuangkan hak-hak minoritas di Indonesia",
-        "Menuntut pembagian wilayah yang lebih adil antara Jawa dan luar Jawa",
-        "Mendirikan Negara Islam Indonesia yang terpisah dari Republik Indonesia"
-      ],
-      ans: 4,
-      exp: "Kartosuwiryo menolak hasil Perjanjian Renville dan memproklamasikan Negara Islam Indonesia (NII) dengan hukum Islam sebagai asas utamanya."
-    },
-    {
-      q: "Dalam menghadapi penjajahan Belanda kembali, pemerintah Indonesia menggunakan dua cara, yaitu ....",
-      opts: [
-        "Kooperatif dan fisik",
-        "Fisik dan diplomasi",
-        "Kooperatif dan diplomasi",
-        "Diplomasi dan nonkooperatif",
-        "Nonkooperatif dan fisik"
-      ],
-      ans: 1,
-      exp: "Perjuangan mempertahankan kemerdekaan Indonesia menggunakan strategi kombinasi saling mendukung: perlawanan fisik di medan laga dan perundingan politik di meja diplomasi."
-    },
-    {
-      q: "Perjanjian Renville dianggap merugikan Indonesia karena ....",
-      opts: [
-        "Belanda mendapat dukungan dari Amerika dan Sekutu",
-        "Wilayah Indonesia makin sempit",
-        "Adanya campur tangan asing dalam menyelesaikan konflik antara Indonesia dan Belanda",
-        "Dominasi KTN di Indonesia makin kuat",
-        "Belanda menggunakan wakil orang Indonesia"
-      ],
-      ans: 1,
-      exp: "Perjanjian Renville memaksa wilayah kedaulatan RI menyusut drastis, menyisakan sebagian kecil Jawa dan Sumatra, serta mengharuskan mundurnya pasukan TNI dari daerah kantong gerilya (Garis Van Mook)."
-    },
-    {
-      q: "Dampak positif Agresi Militer Belanda I pada tanggal 21 Juli 1947 bagi RI adalah ....",
-      opts: [
-        "Bangsa Indonesia memperoleh simpati dan dukungan dari masyarakat internasional",
-        "Indonesia mengungguli Belanda",
-        "Indonesia berhasil menahan serangan Belanda",
-        "Sutan Sjahrir terpilih menjadi duta besar",
-        "Indonesia dan Belanda berhasil melakukan kompromi"
-      ],
-      ans: 0,
-      exp: "Tindakan pelanggaran gencatan senjata oleh Belanda memicu kecaman dunia internasional, mendesak PBB turun tangan, dan memunculkan simpati global bagi hak kemerdekaan Indonesia."
-    },
-    {
-      q: "Hasil kesepakatan yang tertuang dalam Civil Affairs Agreement terkait negara jajahan adalah ....",
-      opts: [
-        "Tentara Sekutu akan mengadakan operasi militer untuk memulihkan keamanan dan ketertiban",
-        "Pejabat-pejabat NICA akan mengambil alih tanggung jawab koloni itu dari pihak Inggris yang mewakili Sekutu",
-        "Indonesia akan diberikan kemerdekaan",
-        "Indonesia akan bergabung dengan Inggris",
-        "Belanda kembali menjajah Indonesia"
-      ],
-      opts: [
-        "Tentara Sekutu akan mengadakan operasi militer untuk memulihkan keamanan dan ketertiban",
-        "Pejabat-pejabat NICA akan mengambil alih tanggung jawab koloni itu dari pihak Inggris yang mewakili Sekutu",
-        "Indonesia akan diberikan kemerdekaan",
-        "Indonesia akan bergabung dengan Inggris",
-        "Belanda kembali menjajah Indonesia"
-      ],
-      ans: 1,
-      exp: "Civil Affairs Agreement (Inggris-Belanda) mengatur fase pengembalian wilayah Indonesia dari komando militer Inggris kepada administrasi sipil Hindia Belanda (NICA) setelah situasi kondusif."
-    },
-    {
-      q: "Berikut ini tiga negara yang masuk ke dalam KTN (Komisi Tiga Negara), yakni ....",
-      opts: [
-        "Amerika Serikat, Australia, dan Inggris",
-        "Australia, India, dan Belgia",
-        "Australia, Amerika Serikat, dan Belgia",
-        "Australia, Amerika Serikat, dan Inggris",
-        "Australia, Belgia, dan Uni Soviet"
-      ],
-      ans: 2,
-      exp: "KTN dibentuk oleh PBB beranggotakan Australia (pilihan Indonesia), Belgia (pilihan Belanda), dan Amerika Serikat (pilihan netral kedua negara)."
-    },
-    {
-      q: "Dari perjuangan diplomasi di atas, yang merupakan hasil kesepakatan dalam Perundingan Linggarjati ditunjukkan oleh nomor ....",
-      opts: [
-        "(1), (2), (6)",
-        "(1), (2), (4)",
-        "(2), (3), (6)",
-        "(2), (3), (5)",
-        "(3), (4), (7)"
-      ],
-      ans: 1,
-      exp: "Perundingan Linggarjati menyepakati: (1) Belanda mengakui RI de facto atas Jawa, Madura, Sumatra; (2) Pembentukan negara federal RIS; (4) Pembentukan Uni Indonesia-Belanda."
-    },
-    {
-      q: "Kabinet Ali Sastroamidjojo I merupakan salah satu kabinet pada masa demokrasi liberal. Prestasi gemilang dari kabinet ini adalah ....",
-      opts: [
-        "Berhasil diselenggarakannya Konferensi Asia Afrika",
-        "Berhasil ditumpasnya gerakan separatis",
-        "Dicanangkannya pelaksanaan politik luar negeri bebas aktif",
-        "Berhasil menghancurkan masalah SARA",
-        "Berhasil membuat Zona Ekonomi Eksklusif"
-      ],
-      ans: 0,
-      exp: "Kabinet Ali I sukses menyelenggarakan Konferensi Asia-Afrika (KAA) di Bandung pada tahun 1955, yang menaikkan citra luar biasa diplomasi Indonesia di mata dunia."
-    },
-    {
-      q: "Pasca-Agresi Militer Belanda II, pemerintah RI dan Belanda bertemu dalam Perundingan Roem-Royen. Perundingan tersebut menimbulkan dampak positif dalam bentuk ....",
-      opts: [
-        "Pengakuan kedaulatan Belanda atas pemerintah Republik Indonesia",
-        "Kesepakatan bahwa pemerintahan Indonesia berbentuk republik",
-        "Pembentukan pemerintahan transisi oleh Komisi Tiga Negara",
-        "Pengembalian pemerintahan Republik Indonesia ke Yogyakarta",
-        "Penarikan pasukan TNI dari kantong-kantong gerilya"
-      ],
-      ans: 3,
-      exp: "Salah satu poin krusial Perundingan Roem-Royen adalah kembalinya para pemimpin RI (Soekarno-Hatta) dari pengasingan serta pengembalian pemerintahan RI ke kota Yogyakarta."
-    },
-    {
-      q: "Peristiwa penangkapan Presiden Soekarno dan Wakil Presiden Drs. Moh. Hatta oleh Belanda yang selanjutnya diasingkan terjadi pada saat ....",
-      opts: [
-        "Perundingan Renville",
-        "Perjanjian Roem-Roijen",
-        "Serangan Umum terhadap Kota Yogyakarta",
-        "Agresi Militer Belanda I",
-        "Agresi Militer Belanda II"
-      ],
-      ans: 4,
-      exp: "Pada Agresi Militer Belanda II (19 Desember 1948), Belanda melancarkan aksi militer kilat ke Yogyakarta dan menawan para pucuk pimpinan pemerintahan RI."
-    },
-    {
-      q: "Alasan utama ibu kota Indonesia harus dipindahkan dari Jakarta ke Yogyakarta pada tahun 1946 adalah ....",
-      opts: [
-        "Permintaan Sutan Sjahrir agar sementara waktu ibu kota dipindah",
-        "Jakarta diminta oleh Sekutu untuk dijadikan sebagai markas",
-        "Jakarta dilanda bencana alam",
-        "Jakarta sudah hancur karena serangan Sekutu",
-        "Presiden Soekarno menjadi sasaran tembak tentara NICA"
-      ],
-      opts: [
-        "Permintaan Sutan Sjahrir agar sementara waktu ibu kota dipindah",
-        "Jakarta diminta oleh Sekutu untuk dijadikan sebagai markas",
-        "Jakarta dilanda bencana alam",
-        "Jakarta sudah hancur karena serangan Sekutu",
-        "Presiden Soekarno menjadi sasaran tembak tentara NICA"
-      ],
-      ans: 4,
-      exp: "Adanya ancaman fisik langsung, teror malam hari, serta upaya percobaan pembunuhan oleh tentara NICA terhadap Presiden Soekarno membuat Jakarta dinilai tidak aman lagi sebagai pusat pemerintahan."
-    },
-    {
-      q: "Berdasarkan kutipan teks di atas, tujuan utama dari gerakan pemberontakan APRA adalah ....",
-      opts: [
-        "Kembali ke bentuk negara kesatuan",
-        "Mempertahankan bentuk negara federal",
-        "Mengintegrasikan apra ke dalam apris",
-        "Membubarkan republik indonesia serikat (RIS)",
-        "Mendirikan negara pasundan yang merdeka dari RIS"
-      ],
-      ans: 1,
-      exp: "Raymond Westerling mendirikan APRA untuk melindungi kepentingan kolonial Belanda dan mempertahankan bentuk negara federal (khususnya Negara Pasundan) agar tidak melebur kembali ke NKRI."
-    },
-    {
-      q: "Latar belakang terbentuknya Gerakan Non-Blok (GNB) ditunjukkan oleh kombinasi ....",
-      opts: [
-        "A1, A2, dan B1",
-        "A2, A3, dan B1",
-        "A2, B1, dan B2",
-        "A3, B1, dan B2",
-        "A3, B2, dan B3"
-      ],
-      ans: 3,
-      exp: "Latar belakang GNB meliputi: Kekhawatiran perang dingin (A3), Organisasi netral tidak memihak kedua blok (B1), dan Adanya persamaan nasib akibat kolonialisme (B2)."
-    },
-    {
-      q: "Kehidupan politik yang menonjol pada masa pelaksanaan Demokrasi Liberal di Indonesia ditandai dengan ....",
-      opts: [
-        "Partai politik berkembang secara kuantitas dan terciptanya kolaborasi antarpartai",
-        "Kegiatan pemerintahan dijalankan oleh presiden",
-        "Sering terjadi pergantian kabinet akibat adanya mosi tidak percaya parlemen terhadap kabinet yang berkuasa tersebut",
-        "Perdana menteri bertanggung jawab kepada presiden dan memberikan kepercayaan kepada parlemen",
-        "Presiden bertugas sebagai kepala pemerintahan dan kepala negara"
-      ],
-      ans: 2,
-      exp: "Ketidakstabilan politik pada era Demokrasi Liberal dipicu oleh aksi saling menjatuhkan antarpartai politik di parlemen melalui mosi tidak percaya, yang berakibat kabinet sering jatuh bangun."
-    },
-    {
-      q: "Sebelum ditangkap oleh Belanda dalam Agresi Militer II, Presiden Soekarno mengutus kawat untuk membentuk Pemerintahan Pelarian di India. Alasan dibentuknya Pemerintahan Pelarian tersebut adalah ....",
-      opts: [
-        "Adanya hubungan diplomasi antara Pemerintah Indonesia dengan Pemerintah India",
-        "Untuk minta bantuan dari Pemerintah India guna menghadapi pendudukan kembali pasukan Belanda",
-        "Untuk mengantisipasi apabila Pemerintah RI di Yogyakarta tidak dapat berfungsi lagi",
-        "Kota Yogyakarta tidak memungkinkan lagi untuk menjadi ibu kota pemerintahan Republik Indonesia",
-        "Memperlihatkan kepada Belanda bahwa Indonesia masih sanggup menjalankan pemerintahan"
-      ],
-      ans: 2,
-      exp: "Mandat pembentukan pemerintahan darurat/pelarian dikirimkan sebagai rencana cadangan (kontinjensi) hukum internasional agar eksistensi politik luar negeri RI tidak vakum jika Yogyakarta jatuh."
-    },
-    {
-      q: "Pemberontakan DI/TII di bawah pimpinan S.M. Kartosuwiryo pertama kali meletus di wilayah ....",
-      opts: [
-        "Kalimantan Selatan",
-        "Jawa Barat",
-        "DI Aceh",
-        "Jawa Tengah",
-        "Sulawesi Selatan"
-      ],
-      ans: 1,
-      exp: "Gerakan Darul Islam (DI) pertama kali diproklamasikan di desa Cisayong, Jawa Barat pada bulan Agustus 1949 setelah kekosongan kekuasaan akibat hijrahnya pasukan Siliwangi."
-    },
-    {
-      q: "Usulan taktis yang diajukan oleh Sutan Sjahrir selaku perdana menteri dalam perundingan awal dengan pihak Belanda di Jakarta adalah ....",
-      opts: [
-        "Pengakuan de facto atas wilayah kepulauan Indonesia",
-        "Penyerahan pemerintahan sepenuhnya kepada Indonesia",
-        "Penyerahan kekuasaan dari tangan Belanda kepada RI",
-        "Pengakuan kedaulatan secara de facto dan de jure selambat-lambatnya pada penghujung tahun 1949",
-        "Pengakuan terhadap Indonesia sebagai negara yang berdaulat penuh atas wilayah bekas jajahan Hindia Belanda"
-      ],
-      ans: 0,
-      exp: "Sjahrir secara realistis menawarkan formula pengakuan secara de facto terlebih dahulu atas wilayah RI (Jawa dan Sumatra) sebagai modal pijakan awal diplomasi selanjutnya."
-    },
-    {
-      q: "Berikut ini adalah hasil-hasil keputusan yang disepakati dalam Konferensi Inter-Indonesia, kecuali ....",
-      opts: [
-        "APRIS adalah angkatan perang nasional",
-        "RI dan BFO membentuk panitia persiapan nasional untuk mengoordinasikan kegiatan sebelum dan sesudah KMB",
-        "BFO mendukung tuntutan RI agar pengakuan kedaulatan diberikan tanpa ikatan politik dan ekonomi",
-        "Negara Indonesia Serikat berganti nama menjadi RIS",
-        "Kerajaan Belanda mengakui kedaulatan Indonesia sepenuhnya tanpa syarat"
-      ],
-      ans: 4,
-      exp: "Kerajaan Belanda mengakui kedaulatan Indonesia sepenuhnya tanpa syarat merupakan poin utama kesepakatan akhir KMB (Konferensi Meja Bundar), bukan hasil dari Konferensi Inter-Indonesia."
-    },
-    {
-      q: "Penyerahan dan pengakuan kedaulatan resmi oleh pemerintah Hindia Belanda kepada RIS terjadi pada tanggal ....",
-      opts: [
-        "12 Desember 1948",
-        "21 Desember 1948",
-        "12 Desember 1949",
-        "21 Desember 1949",
-        "27 Desember 1949"
-      ],
-      ans: 4,
-      exp: "Peristiwa bersejarah penandatanganan naskah pengakuan kedaulatan dilakukan secara simultan di Amsterdam (Belanda) dan Jakarta (Indonesia) pada 27 Desember 1949."
-    },
-    {
-      q: "Pembentukan Pemerintahan Darurat Republik Indonesia (PDRI) di Bukittinggi oleh Syafruddin Prawiranegara memiliki arti penting bagi kelangsungan NKRI karena ....",
-      opts: [
-        "Mematahkan anggapan bahwa Republik Indonesia telah hancur",
-        "Mempertahankan kelangsungan pemerintahan Indonesia",
-        "Mendukung perjuangan fisik yang dilakukan oleh tentara",
-        "Menciptakan dualisme kepemimpinan di Indonesia",
-        "Menarik dukungan dan simpati dunia internasional"
-      ],
-      ans: 1,
-      exp: "PDRI berfungsi sebagai penyambung nyawa legitimasi hukum negara. Melalui PDRI, Indonesia membuktikan kepada dunia internasional bahwa pemerintahan sipil sah RI masih berdiri."
-    },
-    {
-      q: "Dalam konteks integrasi bangsa, fenomena disintegrasi lebih tepat diartikan sebagai upaya ....",
-      opts: [
-        "Perpecahan",
-        "Penyatuan",
-        "Penggabungan",
-        "Pembatasan",
-        "Peleburan"
-      ],
-      ans: 0,
-      exp: "Disintegrasi adalah kondisi pudarnya persatuan, keretakan sistemik, atau gerakan perpecahan yang mengancam keutuhan nasional suatu bangsa."
-    },
-    {
-      q: "Aliran politik (ideologi) yang terdapat di Indonesia pascakemerdekaan yang mewakili kelompok/ideologi Islam menurut pengamatan Herbert Feith adalah ....",
-      opts: [
-        "Nahdlatul Ulama dan Masyumi",
-        "NU dan Muhammadiyah",
-        "Partai Sarekat Islam dan Masyumi",
-        "Al Irsyad dan Nahdlatul Ulama",
-        "Nahdlatul Ulama dan Hidayatullah"
-      ],
-      ans: 0,
-      exp: "Dalam analisis aliran politik di Indonesia, Herbert Feith mengelompokkan representasi utama ideologi politik Islam pada masa itu ke dalam partai Masyumi dan Nahdlatul Ulama (NU)."
-    },
-    {
-      q: "Pusat kesenian Taman Ismail Marzuki (TIM) di kawasan Cikini, Jakarta Pusat dibangun sebagai salah satu wujud penghargaan pemerintah kepada tokoh Ismail Marzuki yang dikenal sebagai ....",
-      opts: [
-        "Legenda tari tradisional Indonesia",
-        "Maestro musik dan lagu perjuangan Indonesia",
-        "Tokoh sastra Indonesia",
-        "Tokoh arsitektur tradisional Indonesia",
-        "Pemain sandiwara tradisional Indonesia"
-      ],
-      ans: 1,
-      exp: "Ismail Marzuki diangkat sebagai pahlawan nasional berkat jasa besarnya menciptakan karya-karya lagu bertema patriotisme dan perjuangan kebangsaan seperti 'Rayuan Pulau Kelapa' dan 'Halo-Halo Bandung'."
-    },
-    {
-      q: "Taktik militer 'Operasi Pagar Betis' digelar secara masif oleh pemerintah bersama rakyat untuk mengepung dan menangkap tokoh pemberontakan ....",
-      opts: [
-        "Westerling",
-        "Soumokil",
-        "Andi Azis",
-        "Kartosoewiryo",
-        "Amir Fatah"
-      ],
-      ans: 3,
-      exp: "Operasi Pagar Betis di Jawa Barat menggabungkan barisan mengepung TNI dan ribuan tenaga rakyat sipil guna mempersempit ruang gerak logistik gerilya Kartosoewiryo di wilayah pegunungan."
-    },
-    {
-      q: "Peristiwa Gerakan 30 September 1965 (G-30-S) memunculkan berbagai interpretasi sejarah. Analisis dari Peter Dale Scott menekankan keterlibatan Dinas Intelijen Amerika Serikat (CIA) dilatarbelakangi oleh ....",
-      opts: [
-        "Terganggu dengan politik Soekarno yang cenderung melawannya",
-        "Sangat takut Indonesia jatuh ke tangan komunis",
-        "Membantu Inggris dalam persoalan Federasi Malaysia",
-        "Ingin menguasai wilayah Freeport Papua",
-        "Tidak ingin Indonesia membesar dan tampil sebagai adidaya baru"
-      ],
-      ans: 1,
-      exp: "Dalam teori konspirasi internasional era Perang Dingin, AS melalui CIA dikabarkan sangat berkepentingan mencegah penyebaran teori efek domino agar Indonesia tidak bergeser penuh ke poros komunis."
-    },
-    {
-      q: "Berikut ini yang bukan merupakan salah satu poin program kerja utama dari Kabinet Wilopo adalah ....",
-      opts: [
-        "Mempersiapkan pemilihan umum",
-        "Meningkatkan keamanan dan kesejahteraan",
-        "Memperbarui bidang pendidikan dan pengajaran",
-        "Mempersiapkan rancangan uud",
-        "Melaksanakan politik luar negeri bebas aktif"
-      ],
-      ans: 3,
-      exp: "Tugas menyusun rancangan UUD yang baru/tetap secara resmi merupakan wewenang dari lembaga Konstituante hasil Pemilu 1955, bukan program kerja eksekutif Kabinet Wilopo."
-    },
-    {
-      q: "Masalah nasional penting yang selalu menjadi agenda prioritas dalam pokok program kerja hampir setiap kabinet pada masa Demokrasi Liberal adalah ....",
-      opts: [
-        "Menciptakan stabilitas politik yang dinamis",
-        "Meningkatkan kesejahteraan rakyat",
-        "Menyelesaikan masalah irian barat",
-        "Mengatasi inflasi yang cukup tinggi",
-        "Menciptakan perdamaian dunia"
-      ],
-      ans: 2,
-      exp: "Pengembalian wilayah Irian Barat ke pangkuan NKRI merupakan isu pemersatu nasional yang konsisten diperjuangkan oleh setiap kabinet masa parlementer di forum internasional."
-    },
-    {
-      q: "Meskipun berjalan dalam kabinet parlementer, Kabinet Natsir dikategorikan sebagai 'zaken kabinet' yang memiliki pengertian sebagai kabinet yang ....",
-      opts: [
-        "Para menterinya bertanggung jawab pada Parlemen",
-        "Dipimpin oleh Perdana Menteri",
-        "Terjadi karena adanya koalisi antarpartai",
-        "Bertanggung jawab kepada Presiden",
-        "Menteri-menterinya diisi oleh para ahli di bidangnya"
-      ],
-      ans: 4,
-      exp: "Zaken Kabinet adalah kabinet yang jajaran menterinya dipilih berdasarkan keahlian profesional, rekam jejak, dan fungsional bidang (*expert*), bukan sekadar bagi-bagi jatah kursi dari partai politik."
-    },
-    {
-      q: "Salah satu karakteristik utama dari sistem pemerintahan demokrasi yang dilaksanakan di Indonesia pada periode tahun 1950–1959 adalah ....",
-      opts: [
-        "Berdasar pada UUD 1945",
-        "Berkonsepsi Nasakom",
-        "Presiden sebagai kepala negara dan kepala pemerintahan",
-        "Berdasar pada UUDS 1950",
-        "Presiden dan parlemen dipilih langsung oleh rakyat"
-      ],
-      ans: 3,
-      exp: "Periode 1950-1959 Indonesia menerapkan sistem Demokrasi Liberal yang berlandaskan konstitusi sementara, yaitu UUDS 1950 dengan sistem pemerintahan kabinet parlementer."
-    },
-    {
-      q: "Menjelang dan pada saat pelaksanaan Pemilu 1955, instabilitas politik di tingkat pusat sangat dirasakan karena ....",
-      opts: [
-        "Partai politik makin banyak",
-        "Diliputi oleh suasana demokrasi parlementer model belanda",
-        "Pemerintah yang tidak memedulikan politik",
-        "Kekuasaan politik di mana-mana",
-        "Partisipasi masyarakat pada politik kian menurun"
-      ],
-      ans: 1,
-      exp: "Model multi-partai ekstrem ala parlemen Barat/Belanda memicu tingginya ego sektoral partai, perebutan kekuasaan, serta rentannya friksi politik yang membuat kabinet rapuh."
-    },
-    {
-      q: "Keterlibatan Amerika Serikat dalam menyokong gerakan PRRI/Permesta dibuktikan dengan jatuh/tertembaknya pesawat Allen Pope. Alasan politis mendasar AS melakukan tindakan tersebut adalah ....",
-      opts: [
-        "Melindungi kepentingan Amerika Serikat di Indonesia",
-        "Bagian dari Perang Dingin antara Amerika Serikat dan Uni Soviet",
-        "Kekhawatiran Amerika Serikat terhadap kedekatan pemerintahan Soekarno dengan poros blok Timur",
-        "Pecahnya dukungan politisi Amerika Serikat, Partai Demokrat mendukung Permesta, sedangkan Partai Republik mendukung Kabinet Djuanda",
-        "PRRI dan Permesta akan menjamin seluruh kepentingan ekonomi Amerika Serikat apabila berhasil mengambil alih kepentingan Republik Indonesia"
-      ],
-      ans: 2,
-      exp: "Amerika Serikat merasa cemas dengan peta politik kabinet di Jakarta yang dinilai semakin akomodatif dan memberi ruang gerak besar bagi berkembangnya Partai Komunis Indonesia (PKI)."
-    },
-    {
-      q: "Dalam proses penyelenggaraan Pemilu pertama tahun 1955, jumlah partai politik yang mengajukan daftar calonnya untuk merebutkan kursi DPR adalah sebanyak ....",
-      opts: [
-        "50",
-        "60",
-        "72",
-        "82",
-        "100"
-      ],
-      ans: 2,
-      exp: "Berdasarkan catatan sejarah KPU, terdapat 72 kontestan dari unsur partai politik, organisasi massa, maupun perserikatan yang mendaftarkan calonnya dalam kontestasi parlemen DPR 1955."
-    },
-    {
-      q: "Amir Fatah memimpin gerakan pembentukan DI/TII di Jawa Tengah. Faktor internal yang mendorong peralihan sikapnya untuk membelot dari RI adalah ....",
-      opts: [
-        "Aparatur pemerintah dan TNI di Tegal-Brebes terpengaruh kelompok kiri",
-        "Negara republik yang berdasarkan Pancasila tidak sesuai dengan kepercayaannya",
-        "Keinginan anggota pasukannya untuk menjadi pasukan khusus tidak disetujui",
-        "Pemerintah dianggap kurang menghargai masyarakat Jawa Tengah",
-        "Mendapat dukungan personel dan senjata dari Batalion 426"
-      ],
-      ans: 0,
-      exp: "Ketidakpuasan Amir Fatah diperparah oleh meluasnya pengaruh politik golongan sayap kiri (komunis) di dalam birokrasi lokal serta militer wilayah Tegal-Brebes pasca-perjanjian Renville."
-    }
-  ],
+  { "q": "Alat bantu senam yang biasa digunakan, yaitu berupa bola, pita, tali, tongkat, dan simpai. Nama lain dari simpai adalah ....", "opts": ["gada", "hoop", "ribbon", "ball", "tombak"], "ans": 1, "exp": "Simpai dalam bahasa Inggris disebut hoop, merupakan salah satu alat yang digunakan dalam cabang senam irama (ritmik)." },
+  { "q": "Dalam senam irama, biasanya akan memperlihatkan koreografi yang kental dengan ....", "opts": ["ayunan kaki", "irama lagu", "akrobatik", "gerakan baris-berbaris", "sikap jalan di tempat"], "ans": 1, "exp": "Senam irama sangat mengandalkan keselarasan antara koreografi gerakan tubuh dengan irama lagu yang mengiringinya." },
+  { "q": "Berikut ini yang bukan ciri-ciri senam irama adalah ....", "opts": ["mudah diikuti", "bermanfaat untuk kesehatan tubuh", "mahal", "melibatkan banyak peserta", "diiringi musik"], "ans": 2, "exp": "Senam irama merupakan olahraga yang merakyat, ekonomis, dan tidak membutuhkan biaya yang mahal untuk melakukannya." },
+  { "q": "Berikut gerakan dasar dalam melakukan senam irama, kecuali ....", "opts": ["mengayun", "melompat", "bergoyang", "meroda", "melangkah"], "ans": 3, "exp": "Meroda merupakan gerakan dasar dalam senam lantai (artistik), bukan komponen utama dalam senam irama." },
+  { "q": "Senam irama yang dipelopori oleh Francois Delsarte adalah senam irama yang berasal dari seni ....", "opts": ["sandiwara", "musik", "balet", "rupa", "tari"], "ans": 0, "exp": "Francois Delsarte memelopori sistem gerak yang menghubungkan emosi dengan ekspresi tubuh, yang berakar dari seni sandiwara atau akting." },
+  { "q": "Pada aktivitas keterampilan gerak ayunan lengan satu lengan horizontal ke kiri dan ke kanan, setiap gerak ayunan lengan diikuti dengan ....", "opts": ["langkah kaki kanan", "langkah kaki kiri", "gelengan kepala", "liukan badan", "dorongan pinggul"], "ans": 3, "exp": "Ayunan lengan secara horizontal ke kiri dan ke kanan secara alami akan diikuti oleh liukan badan untuk menjaga keseimbangan dan keluwesan." },
+  { "q": "Arah kedua lengan pada hitungan 4 aktivitas gerak ayunan lengan kedua tangan setinggi bahu adalah ke arah ....", "opts": ["depan", "samping kanan", "samping kiri", "belakang", "atas"], "ans": 0, "exp": "Pada hitungan ke-4 dalam variasi gerak ayunan lengan setinggi bahu standar, posisi kedua lengan kembali lurus atau didorong ke arah depan." },
+  { "q": "Arah pandangan pada hitungan 4 aktivitas gerak ayunan lengan silang dan rentang di muka badan adalah ke arah ....", "opts": ["lurus ke depan", "lengan kanan", "lengan kiri", "bahu kanan", "bahu kiri"], "ans": 0, "exp": "Saat gerakan lengan menyilang dan merentang kembali stabil pada hitungan akhir, arah pandangan diposisikan lurus ke depan." },
+  { "q": "Sikap awal pada aktivitas gerak ayunan kedua lengan ditarik ke dada dan didorong ke depan adalah kedua lengan ....", "opts": ["ditarik di depan dada", "diangkat lurus di samping badan", "diangkat lurus ke depan", "rentang ke samping", "silang di depan dada"], "ans": 2, "exp": "Sikap awal gerakan ini dimulai dengan kedua lengan diangkat lurus ke depan, sebelum ditarik menuju dada dan didorong kembali." },
+  { "q": "Terdapat beberapa penekanan yang harus diberikan dalam senam irama. Salah satu penekanan tersebut adalah terdapat pemberi ketukan. Unsur penekanan yang berperan memberikan ketukan disebut ....", "opts": ["ritmik", "kontinuitas", "irama", "tekanan", "fleksibilitas"], "ans": 2, "exp": "Irama (ritme) adalah struktur ketukan berulang yang memandu kecepatan dan ketepatan setiap gerakan senam." },
+  { "q": "Berikut ini bukan merupakan gerak langkah kaki dalam senam irama, yaitu gerak langkah kaki ....", "opts": ["ke samping", "depan-belakang", "lurus ke belakang", "jongkok", "lurus ke depan"], "ans": 3, "exp": "Langkah kaki dalam senam irama berfokus pada perpindahan arah (depan, belakang, samping), sedangkan jongkok merupakan posisi statis atau bentuk gerakan dasar lain." },
+  { "q": "Pada fase istirahat gerakan lengan setelah tangan berada di atas bahu maka selanjutnya melakukan gerakan ....", "opts": ["tangan diputar keluar", "mendekatkan tangan ke paha", "menekuk siku di samping bahu", "dorong lengan lurus", "masukkan tangan ke dalam air bawah"], "ans": 1, "exp": "Setelah fase recovery (tangan di atas bahu), tangan bergerak turun mendekati paha untuk bersiap melakukan fase kayuhan berikutnya." },
+  { "q": "Organisasi yang mengatur olahraga renang di Indonesia adalah ....", "opts": ["PASI", "PBSI", "PJSI", "PRSI", "PSSI"], "ans": 3, "exp": "PRSI adalah Persatuan Renang Seluruh Indonesia (sekarang bertransformasi menjadi Akuatik Indonesia) yang menaungi olahraga air di tanah air." },
+  { "q": "Istilah lain renang gaya punggung, yaitu ....", "opts": ["breast stroke", "crawl stroke", "back stroke", "butterfly stroke", "dolphin stroke"], "ans": 2, "exp": "Gaya punggung disebut back stroke karena posisi punggung menghadap ke permukaan air selama berenang." },
+  { "q": "Dayangan lengan dalam renang gaya bebas akan mendukung laju tubuh dengan cepat. Gerakan mendayung tersebut dimulai saat ....", "opts": ["lengan berada di atas", "ujung jari tangan menyentuh air", "seluruh lengan berada di bawah badan", "kepala menoleh ke samping untuk bernapas", "mulut berada di bawah untuk membuang napas"], "ans": 1, "exp": "Fase mendayung atau kayuhan dimulai segera setelah ujung jari tangan masuk atau menyentuh air (entry phase)." },
+  { "q": "Terdapat beberapa hal yang harus dilakukan sebelum memulai aktivitas renang. Hal yang yang harus dilakukan sebelum berenang untuk menyesuaikan suhu tubuh dengan suhu air adalah ....", "opts": ["pemanasan", "mandi di air pancuran yang tersedia", "latihan irama kaki", "memakai pakaian renang berwarna gelap", "lari-lari di pinggir kolam"], "ans": 1, "exp": "Mandi di pancuran air kolam sebelum berenang berfungsi membasahi kulit agar tubuh beradaptasi dengan suhu air kolam, sekaligus menjaga higienitas." },
+  { "q": "Dalam aktivitas renang, semua bagian tubuh ikut bergerak. Teknik gerakan yang lebih dominan digunakan dalam renang gaya bebas, yaitu gerakan ....", "opts": ["kepala", "lengan", "mengambil napas", "meluncur", "badan"], "ans": 1, "exp": "Gerakan lengan merupakan pendorong paling dominan dalam renang gaya bebas untuk menarik tubuh maju ke depan." },
+  { "q": "Berikut merupakan kesalahan umum yang biasa terjadi pada renang gaya bebas, kecuali ....", "opts": ["posisi tubuh streamline", "sikap badan kaku", "badan bergerak ke samping", "ayunan tangan dan kaki kurang pas", "koordinasi gerakan kaki dan tangan tidak seimbang"], "ans": 0, "exp": "Streamline (sejajar permukaan air) adalah posisi tubuh yang benar dan sangat dianjurkan untuk mengurangi hambatan air." },
+  { "q": "Tahap paling terakhir setelah selesai berenang adalah ....", "opts": ["pernapasan", "pendinginan", "istirahat yang cukup", "relaksasi", "polo air"], "ans": 1, "exp": "Pendinginan wajib dilakukan setelah berolahraga untuk menurunkan denyut jantung dan memulihkan kondisi otot secara bertahap." },
+  { "q": "Perbedaan renang gaya dada dan gaya bebas adalah ....", "opts": ["tangan gaya dada seperti membelah air, sedangkan gaya bebas tidak", "kaki gaya dada dikepakkan ke air, sedangkan gaya bebas menyerupai katak", "tangan gaya bebas digerakkan lurus ke depan, sedangkan gaya dada memutar", "gaya dada lebih cepat dibanding gaya bebas", "gaya dada ada jeda pengambilan napas, sedangkan gaya bebas tidak berjeda"], "ans": 0, "exp": "Gerakan lengan gaya dada bergerak membuka ke samping seperti membelah air secara simetris, sedangkan gaya bebas bergerak bergantian ke depan belakang." },
+  { "q": "Tujuan melakukan lari 50 meter adalah untuk meningkatkan ....", "opts": ["imun tubuh", "otot lengan", "daya tahan jantung", "kosentrasi", "otot paha"], "ans": 4, "exp": "Lari cepat jarak pendek (sprint) sangat bertumpu pada daya ledak dan kekuatan otot-otot ekstremitas bawah, terutama otot paha." },
+  { "q": "Faktor yang memengaruhi kebugaran jasmani adalah ....", "opts": ["sehat, bugar, segar", "sehat, fisik, respons otot", "tidur cukup, makan teratur", "fisik, fungsi organ, respons otot"], "ans": 3, "exp": "Kebugaran jasmani seseorang sangat dipengaruhi oleh kondisi fisik dasar, efisiensi fungsi organ tubuh, dan kecepatan respons otot terhadap beban." },
+  { "q": "Kemampuan untuk mengendalikan organ dan saraf otot sehingga dapat mengendalikan tubuh dengan baik adalah ....", "opts": ["kecepatan", "kelincahan", "keseimbangan", "koordinasi", "ketepatan"], "ans": 3, "exp": "Koordinasi merupakan kemampuan mengintegrasikan berbagai gerakan sistem saraf dan otot menjadi satu gerakan yang efisien." },
+  { "q": "Kemampuan tubuh dalam menyesuaikan gerakan dari satu posisi ke posisi lain, seperti dari depan ke belakang atau dari kiri ke kanan disebut ....", "opts": ["ketahanan", "keuletan", "ketepatan", "kecepatan", "kelincahan"], "ans": 4, "exp": "Kelincahan (agility) adalah kemampuan mengubah arah tubuh atau posisi dengan cepat tanpa kehilangan keseimbangan." },
+  { "q": "Berikut ini yang bukan merupakan latihan jasmani terhadap tubuh, yaitu ....", "opts": ["meningkatkan kemampuan jantung dan paru-paru", "memperkuat sendi dan otot", "menurunkan tekanan darah", "mengurangi lemak", "mempercepat penuaan"], "ans": 4, "exp": "Latihan jasmani yang teratur justru menghambat proses penuaan sel tubuh dan menjaga organ tetap awet muda." },
+  { "q": "Lari jarak di atas 1.000 meter berguna untuk melatih ....", "opts": ["ketahanan", "keuletan", "ketepatan", "kecepatan", "kelincahan"], "ans": 0, "exp": "Lari jarak jauh melatih ketahanan kardiovaskular (jantung dan paru-paru) untuk bekerja stabil dalam durasi lama." },
+  { "q": "Ketika melakukan latihan kelenturan otot pinggang pada posisi membengkokkan badan ke samping, posisi lengan adalah ....", "opts": ["lurus ke depan", "lurus di samping badan", "lurus ke atas", "merentang ke samping kanan", "merentang ke samping kiri"], "ans": 2, "exp": "Posisi kedua lengan diluruskan ke atas mengikuti regangan tubuh saat membengkokkan pinggang ke kanan atau ke kiri." },
+  { "q": "Tidur tengkurap kedua tangan ditekuk di samping dada, kedua kaki lurus, kemudian luruskan kedua tangan dengan mengangkat badan (gerakan diulang-ulang) merupakan gerakan melakukan ....", "opts": ["squat jump", "squat thrust", "back up", "push up", "sit up"], "ans": 3, "exp": "Deskripsi tersebut merupakan urutan mekanis yang tepat dari gerakan push up untuk melatih kekuatan otot lengan dan dada." },
+  { "q": "Gerakan melambungkan dan menangkap bola untuk melatih ....", "opts": ["koordinasi", "kecepatan", "keseimbangan", "kelincahan", "kekuatan"], "ans": 0, "exp": "Aktivitas lempar tangkap mengandalkan koordinasi yang baik antara ketajaman mata dan respons motorik tangan." },
+  { "q": "Salah satu aktivitas untuk meningkatkan kebugaran jasmani adalah latihan lari cepat 50 meter. Aktivitas ini dinyatakan kategori sedang bagi siswa putra jika mampu mencapai angka ... detik.", "opts": ["10,9–11,9", "8,8–10,3", "8,8–9,9", "7,7–8,7", "7,8–8,7"], "ans": 3, "exp": "Berdasarkan Tes Kebugaran Jasmani Indonesia (TKJI) untuk putra kelompok usia remaja, rentang waktu 7,7 hingga 8,7 detik masuk kategori sedang." },
+  { "q": "Manfaat melakukan senam irama dengan teknik yang benar membuat tubuh ....", "opts": ["cedera", "lelah", "sakit", "sehat", "kaku"], "ans": 3, "exp": "Gerakan senam irama yang dilakukan secara tepat dan beraturan akan meningkatkan sirkulasi darah dan membuat tubuh menjadi sehat." },
+  { "q": "Gerakan pada senam irama disesuaikan dengan ....", "opts": ["ayunan", "gerakan kepala", "gerakan lengan", "irama lagu", "ayunan lengan"], "ans": 3, "exp": "Karakteristik utama senam irama adalah keselarasan mutlak antara gerakan motorik dengan ketukan atau irama lagu." },
+  { "q": "Agar terhindar terjadinya cedera, dianjurkan sebelum melakukan kegiatan senam irama didahului dengan ....", "opts": ["persiapan", "pemanasan", "pendinginan", "gerakan inti", "gerakan awal"], "ans": 1, "exp": "Pemanasan (warming up) berfungsi menaikkan suhu otot dan melenturkan sendi agar siap beraktivitas tanpa risiko cedera." },
+  { "q": "Gerakan tangan senam irama meliputi gerak ....", "opts": ["meliuk, membungkuk, meloncat", "meliuk, membungkuk, menengadah", "mengayun, memutar, menengadah", "mengayun, meliuk, menengadah", "mengayun, memutar, mengeper"], "ans": 4, "exp": "Variasi gerak khusus untuk bagian lengan dalam senam ritmik didominasi oleh gerakan mengayun, memutar, dan mengeper." },
+  { "q": "Tumpuan berat badan pada aktivitas keterampilan rangkaian gerak 2 senam irama hitungan 1–2 terletak pada ....", "opts": ["tangan kanan", "tangan kiri", "kaki kanan", "kaki kiri", "kedua kaki"], "ans": 4, "exp": "Pada perpindahan gerak dasar hitungan awal, berat badan didistribusikan secara seimbang pada kedua kaki sebagai fondasi tegak." },
+  { "q": "Dalam gerak ayunan satu lengan ke belakang dan ke depan senam irama terdiri atas empat hitungan. Dalam tiap hitungan terdapat gerakan yang harus dilakukan agar gerakan senam irama terlihat tertib dan rapi. Gerakan pada hitungan 2 aktivitas gerak ayunan satu lengan ke belakang dan ke depan adalah ....", "opts": ["kedua lengan lurus ke depan", "lengan kiri diayunkan ke arah depan", "lengan kiri diayunkan ke arah belakang", "lengan kanan diayunkan ke arah depan", "lengan kanan diayunkan ke arah belakang"], "ans": 3, "exp": "Jika hitungan 1 lengan kanan mengayun ke belakang, maka pada hitungan 2 posisi lengan kanan diayunkan kembali ke arah depan." },
+  { "q": "Senam irama yang dipelopori oleh Emile Jaques Dalcroze adalah senam irama yang berasal dari seni ....", "opts": ["sandiwara", "balet", "tari", "musik", "rupa"], "ans": 3, "exp": "Emile Jaques-Dalcroze adalah seorang musisi yang menciptakan euritmik, metode pengajaran musik melalui gerakan tubuh." },
+  { "q": "Dalam senam irama, seorang pesenam harus bisa menyelaraskan gerakan tubuh dengan musik yang mengiringi. Hal tersebut mencakup unsur senam irama ....", "opts": ["kelincahan", "keluwesan", "ketepatan", "kekompakan", "kerja sama"], "ans": 2, "exp": "Ketepatan (ketepatan musik/irama) adalah kemampuan mencocokkan ketukan musik dengan puncak gerakan tubuh." },
+  { "q": "Kunci keberhasilan seorang perenang adalah kemampuan mengatur napas. Kemampuan pengambilan napas dan mengembuskan napas sangat penting pada semua gaya renang. Begitu pula renang gaya bebas. Pengambilan napas dalam renang gaya bebas dilakukan dengan cara ....", "opts": ["memutar kepala ke samping", "menengadahkan kepala ke atas", "menghadapkan kepala tegak lurus dengan permukaan air", "meluruskan kepala ke bawah", "memposisikan kepala tegak lurus dengan permukaan air"], "ans": 0, "exp": "Pengambilan napas gaya bebas dilakukan dengan memutar kepala ke samping kanan atau kiri saat lengan diangkat keluar dari air." },
+  { "q": "Gerakan aktivitas langkah lurus ke belakang pada hitungan 1 adalah ....", "opts": ["kedua kaki rapat", "kaki kiri dilangkahkan ke depan", "kaki kanan dilangkahkan ke depan", "kaki kiri dilangkahkan ke belakang", "kaki kanan dilangkahkan ke belakang"], "ans": 3, "exp": "Sesuai namanya, hitungan pertama dimulai dengan melangkahkan kaki kiri lurus ke arah belakang." },
+  { "q": "Berikut ini prinsip-prinsip latihan kecepatan, kecuali ....", "opts": ["jarak tempuh panjang", "interval lengkap", "waktu recovery lengkap", "bentuk aktivitasnya selalu bersifat eksplosif", "tinggi atau rendah"], "ans": 0, "exp": "Latihan kecepatan (speed) menggunakan prinsip jarak tempuh yang pendek agar atlet bisa mengerahkan kecepatan maksimal tanpa kelelahan stamina." },
+  { "q": "Komponen kebugaran jasmani berikut yang berkaitan dengan keterampilan adalah ....", "opts": ["kekuatan otot", "kelenturan sendi", "keseimbangan", "komposisi tubuh", "daya tahan jantung dan paru-paru"], "ans": 2, "exp": "Keseimbangan (balance) masuk ke dalam unsur kebugaran yang menunjang performa keterampilan (skill-related), sedangkan opsi lain adalah komponen kesehatan (health-related)." },
+  { "q": "Tujuan penggunaan kacamata renang adalah ....", "opts": ["agar tidak silau", "memaksimalkan gerakan tangan", "mencegah iritasi mata", "meminimalkan gerakan tangan", "mencegah alergi kulit"], "ans": 2, "exp": "Kacamata renang melindungi mata dari kontak langsung zat kimia kolam (kaporit) atau bakteri untuk mencegah iritasi." },
+  { "q": "Gerakan lengan dan kaki dalam gaya punggung serupa dengan renang gaya ....", "opts": ["katak", "kupu-kupu", "punggung", "dada", "bebas"], "ans": 4, "exp": "Gaya punggung sering disebut sebagai gaya bebas terbalik karena mekanika kayuhan lengan dan cambukan kaki sangat mirip." },
+  { "q": "Salah satu kesalahan teknik renang gaya punggung adalah kesalahan koordinasi, yaitu ....", "opts": ["gerakan kaki dan tangan tidak seimbang", "tangan mendorong air ke belakang", "kaki tidak ditekuk", "posisi tubuh sejajar permukaan air", "kepala keluar dari air"], "ans": 0, "exp": "Kesalahan koordinasi terjadi ketika ritme kayuhan lengan tidak sinkron dengan frekuensi tendangan kaki, sehingga mengacaukan efisiensi laju." },
+  { "q": "Kesanggupan dan kemampuan tubuh untuk melakukan penyesuaian terhadap pembebanan fisik yang diberikan tanpa menimbulkan kelelahan berlebihan disebut ....", "opts": ["ketahanan tubuh", "komposisi tubuh", "kebugaran jasmani", "metabolisme tubuh", "kesehatan"], "ans": 2, "exp": "Ini merupakan definisi baku dari kebugaran jasmani (physical fitness)." },
+  { "q": "Ketahanan terhadap kelelahan dan kemampuan pemulihan segera setelah mengalami kelelahan disebut ....", "opts": ["ketahanan jantung dan paru-paru", "ketahanan tubuh", "kekuatan", "dayay tahan fisik", "komposisi tubuh"], "ans": 3, "exp": "Daya tahan fisik (endurance) adalah kapasitas tubuh mempertahankan performa tanpa mengalami kelelahan ekstrem serta pulih dengan cepat." },
+  { "q": "Latihan kekuatan otot dengan beban yang dilakukan dengan cara berbaring di atas bangku, sedangkan beban berada di atas dada. Kemudian barbel didorong tegak lurus ke atas hingga lengan lurus disebut gerakan ....", "opts": ["curl", "step up", "high pull", "squat", "bench press"], "ans": 4, "exp": "Bench press adalah latihan beban standar yang dilakukan dengan posisi berbaring telentang untuk melatih otot dada (pectoralis)." },
+  { "q": "Banyak kasus penularan HIV/AIDS berasal dari ibu ke anak sehingga perlu pencegahan atas masalah ini. Langkah pencegahan penularan HIV/AIDS dari ibu ke anak adalah ....", "opts": ["penggunaan obat ARV (antiretroviral)", "mempertebal iman dan takwa", "pengujian ketat terhadap darah atau jaringan yang didonorkan", "sirkumsisi", "penggunaan alat kontrasepsi"], "ans": 0, "exp": "Konsumsi ARV (Antiretroviral) secara teratur pada ibu hamil dengan HIV secara signifikan menurunkan kadar virus (viral load) sehingga meminimalkan risiko penularan ke janin." },
+  { "q": "Penderita mudah linglung, pelupa, depresi, dan gelisah merupakan contoh dampak AIDS. Komplikasi HIV/AIDS ini berupa ....", "opts": ["kanker", "gangguan penglihatan", "masalah neurologis", "gangguan ginjal", "infeksi oportunistik"], "ans": 2, "exp": "Gejala seperti linglung, pelupa, dan depresi merupakan indikasi bahwa virus telah memengaruhi sistem saraf pusat, yang dikategorikan sebagai masalah neurologis." }
+],
 };
 
 // Build all-mode
-BANK.all = [...BANK.pkn, ...BANK.bindo, ...BANK.sejarah];
+BANK.all = [...BANK.pkn, ...BANK.bindo,];
 
 // ============================================================
 // GAME STATE
