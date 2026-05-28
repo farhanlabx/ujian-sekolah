@@ -3,7 +3,7 @@
 export interface Achievement {
   id: string;
   title: string;
-  emoji: string;
+  emoji?: string;
   desc: string;
   unlocked: boolean;
   hint: string;
@@ -74,13 +74,13 @@ export interface SorterItem {
   emoji: string;
   name: string;
   value?: string | number;
-  correctAction: 'ACCEPT' | 'REJECT' | 'FLAG';
+  correctLabel: 'Hewan' | 'Kendaraan' | 'Gadget' | 'FLAG';
   isNoisy: boolean;
   isOutlier?: boolean;
   isMissing?: boolean;
-  category: string;
+  category?: string;
   tip: string;
-  explanation: string;
+  explanation?: string;
 }
 
 export interface SorterRound {
@@ -100,23 +100,24 @@ export interface PromptBlock {
   id: string;
   type: BlockType;
   text: string;
-  placeholder: string;
+  placeholder?: string;
   score: number;
-  color: string;
+  color?: string;
 }
 
 export interface WizardQuest {
-  id: number;
+  id?: number;
   mission: string;
-  difficulty: 'Easy' | 'Medium' | 'Hard' | 'Expert';
-  concept: string;
-  description: string;
-  requiredBlocks: BlockType[];
-  optionalBlocks: BlockType[];
+  difficulty?: 'Easy' | 'Medium' | 'Hard' | 'Expert';
+  concept?: string;
+  description?: string;
+  requiredBlocks: BlockType[] | { type: BlockType; placeholder: string }[];
+  optionalBlocks?: BlockType[];
   badExample: string;
   goodExample: string;
-  explanation: string;
-  xpReward: number;
+  explanation?: string;
+  xpReward?: number;
+  idealCombination?: string[];
 }
 
 // ─── GAME 4: MODEL SHOWDOWN ───────────────────────────────────────────────────
@@ -133,7 +134,10 @@ export type ModelType =
   | 'K-Means'
   | 'Neural Network'
   | 'LSTM'
-  | 'Transformer';
+  | 'Transformer'
+  | 'Classification'
+  | 'Regression'
+  | 'Clustering';
 
 export interface ShowdownOption {
   type: ModelType;
@@ -141,23 +145,23 @@ export interface ShowdownOption {
   description: string;
   isCorrect: boolean;
   explanation: string;
-  pros: string[];
-  cons: string[];
+  pros?: string[];
+  cons?: string[];
 }
 
 export interface ShowdownQuest {
-  id: number;
+  id?: number;
   caseTitle: string;
   caseDescription: string;
-  category: 'Classification' | 'Regression' | 'Clustering' | 'NLP' | 'Computer Vision';
-  difficulty: 'Easy' | 'Medium' | 'Hard';
-  datasetInfo: {
+  category?: 'Classification' | 'Regression' | 'Clustering' | 'NLP' | 'Computer Vision';
+  difficulty?: 'Easy' | 'Medium' | 'Hard';
+  datasetInfo?: {
     size: string;
     features: string;
     target: string;
   };
   options: ShowdownOption[];
-  xpReward: number;
+  xpReward?: number;
 }
 
 // ─── GAME 5: OVERFITTING ESCAPE ───────────────────────────────────────────────
@@ -192,10 +196,10 @@ export type EthicalVerdict = 'ADIL' | 'PERLU_PERBAIKAN' | 'BIAS' | 'TIDAK_ETIS';
 
 export interface EthicalOption {
   text: string;
-  verdict: EthicalVerdict;
+  type: 'Adil' | 'Bias' | 'Tidak Etis';
   xpReward: number;
   explanation: string;
-  consequences: string[];
+  consequences?: string[];
 }
 
 export interface JudgeDilemma {
@@ -205,10 +209,10 @@ export interface JudgeDilemma {
   scenario: string;
   actor: string;
   imageEmoji: string;
-  stakeholders: string[];
-  dataFacts: string[];
+  stakeholders?: string[];
+  dataFacts?: string[];
   options: EthicalOption[];
-  educationalNote: string;
+  educationalNote?: string;
 }
 
 // ─── KNOWLEDGE CODEX ─────────────────────────────────────────────────────────
@@ -216,17 +220,18 @@ export interface JudgeDilemma {
 export interface CodexEntry {
   id: string;
   title: string;
-  category: 'Neural Networks' | 'Data Engineering' | 'Prompt Engineering' | 'ML Models' | 'Regularization' | 'AI Ethics' | 'Fundamentals';
-  emoji: string;
-  shortDef: string;
-  fullExplanation: string;
-  analogy: string;
+  category: string;
+  emoji?: string;
+  shortDef?: string;
+  fullExplanation?: string;
+  analogy?: string;
   formula?: string;
   codeExample?: string;
-  relatedConcepts: string[];
-  difficulty: 'Pemula' | 'Menengah' | 'Lanjut';
-  unlocked: boolean;
-  xpCost: number;
+  relatedConcepts?: string[];
+  difficulty?: 'Pemula' | 'Menengah' | 'Lanjut' | string;
+  unlocked?: boolean;
+  xpCost?: number;
+  example?: string;
 }
 
 // ─── TOAST / NOTIFICATION ────────────────────────────────────────────────────

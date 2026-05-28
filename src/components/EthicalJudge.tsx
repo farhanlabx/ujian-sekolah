@@ -12,6 +12,7 @@ const DILEMMAS: JudgeDilemma[] = [
   {
     id: 'eth_1',
     title: "1. Keputusan Kredit Automatis Bank Mandiri",
+    category: 'Keuangan',
     scenario: "Sistem scoring kredit AI otomatis menolak pengajuan kredit kepemilikan apartemen seorang wanita karena ia tinggal di kawasan dengan rata-rata ekonomi menengah ke bawah, meskipun tabungannya melimpah.",
     actor: "Terdakwa: Kredit Bot V.1",
     imageEmoji: "🏢",
@@ -39,6 +40,7 @@ const DILEMMAS: JudgeDilemma[] = [
   {
     id: 'eth_2',
     title: "2. Penyaringan Berkas Lamaran Pekerjaan di Google",
+    category: 'Rekrutmen',
     scenario: "Model AI rekrutmen menyortir ratusan portofolio dan otomatis memprioritaskan pelamar berkode gender laki-laki karena ia berlatih menggunakan data CV lama dari tahun 2000-an yang didominasi pria.",
     actor: "Terdakwa: HR Recruiter Bot",
     imageEmoji: "💼",
