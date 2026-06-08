@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penutup — Terima Kasih</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .closing-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 24px;
+            padding: 40px 20px;
+            animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        .closing-ornament {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            animation: fadeUp 0.8s 0.05s both;
+        }
+
+        .ornament-line {
+            width: 48px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold));
+        }
+
+        .ornament-line.reverse {
+            background: linear-gradient(90deg, var(--gold), transparent);
+        }
+
+        .ornament-diamond {
+            width: 7px;
+            height: 7px;
+            background: var(--gold);
+            transform: rotate(45deg);
+        }
+
+        .closing-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            animation: fadeUp 0.8s 0.1s both;
+        }
+
+        .closing-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(52px, 11vw, 112px);
+            font-weight: 900;
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+            color: var(--navy);
+            position: relative;
+            animation: fadeUp 0.8s 0.15s both;
+        }
+
+        .closing-heading .gold-word {
+            display: block;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .closing-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .closing-message {
+            font-size: clamp(13px, 1.6vw, 16px);
+            font-weight: 300;
+            color: var(--text-muted);
+            line-height: 1.75;
+            max-width: 480px;
+            letter-spacing: 0.02em;
+            animation: fadeUp 0.8s 0.2s both;
+        }
+
+        .closing-message strong {
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .closing-signature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 20px 40px;
+            background: var(--white);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-soft);
+            animation: fadeUp 0.8s 0.25s both;
+        }
+
+        .signature-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: 0.02em;
+        }
+
+        .signature-meta {
+            font-size: 11px;
+            font-weight: 400;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .closing-dots {
+            display: flex;
+            gap: 8px;
+            animation: fadeUp 0.8s 0.3s both;
+        }
+
+        .closing-dots span {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--gold);
+            opacity: 0.4;
+        }
+
+        .closing-dots span:nth-child(2) {
+            opacity: 0.7;
+        }
+
+        .closing-dots span:nth-child(3) {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg-decoration"></div>
+    <div class="corner-accent top-left"></div>
+    <div class="corner-accent bottom-right"></div>
+
+    <nav class="navbar">
+        <span class="navbar-identity">Muhamad Farhan Mubarak</span>
+        <span class="navbar-hint" style="opacity: 0; pointer-events: none;">—</span>
+    </nav>
+
+    <div class="nav-zone left" id="nav-left"></div>
+    <div class="nav-zone right disabled"></div>
+
+    <main class="page-wrapper">
+        <section class="closing-content">
+
+            <div class="closing-ornament">
+                <div class="ornament-line"></div>
+                <div class="ornament-diamond"></div>
+                <div class="ornament-line reverse"></div>
+            </div>
+
+            <p class="closing-label">Penutup Presentasi</p>
+
+            <h2 class="closing-heading">
+                Terima
+                <span class="gold-word">Kasih</span>
+            </h2>
+
+            <p class="closing-message">
+                Demikian laporan Praktik Kerja Lapangan yang telah saya laksanakan.<br>
+                Semoga apa yang telah dipresentasikan dapat bermanfaat dan memberikan<br>
+                <strong>gambaran nyata pengalaman di dunia industri.</strong>
+            </p>
+
+            <div class="closing-signature">
+                <span class="signature-name">Muhamad Farhan Mubarak</span>
+                <span class="signature-meta">XI RPL 5 &nbsp;·&nbsp; NIS 7188</span>
+            </div>
+
+            <div class="closing-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('nav-left').addEventListener('click', function () {
+            window.location.href = 'chapter-4-isi.html';
+        });
+    </script>
+
+</body>
+
+</html>

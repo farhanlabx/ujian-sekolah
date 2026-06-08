@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi Umum - Laporan PKL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="nav-zone left" id="prevZone" title="Klik untuk ke Halaman Sebelumnya"></div>
+    <div class="nav-zone right" id="nextZone" title="Klik untuk ke Halaman Selanjutnya"></div>
+
+    <header class="navbar">
+        <div class="navbar-identity">Muhamad Farhan Mubarak</div>
+    </header>
+
+    <div class="bg-decoration"></div>
+    <div class="corner-accent top-left"></div>
+    <div class="corner-accent bottom-right"></div>
+
+    <main class="page-wrapper">
+        <div class="container-split">
+            
+            <div class="info-text-col">
+                <h1 class="page-title">Informasi Umum Perusahaan</h1>
+                
+                <div class="company-desc-box">
+                    <p>Koding Akademi adalah lembaga pendidikan dan pusat pelatihan teknologi yang berfokus pada pengembangan keahlian pemrograman (coding), robotika, dan ilmu komputer untuk mempersiapkan generasi digital yang kompeten.</p>
+                </div>
+
+                <div class="biodata-card">
+                    <div class="bio-row">
+                        <span class="label">Pimpinan</span>
+                        <span class="colon">:</span>
+                        <span class="value">Anak Agung Gde Rai Adi Putra Sanjaya</span>
+                    </div>
+                    <div class="bio-row">
+                        <span class="label">Alamat</span>
+                        <span class="colon">:</span>
+                        <span class="value">Jl. Tukad Batanghari No.55, Panjer, Denpasar Selatan, Kota Denpasar, Bali 80225</span>
+                    </div>
+                    <div class="bio-row">
+                        <span class="label">Website</span>
+                        <span class="colon">:</span>
+                        <span class="value"><a href="https://kodingakademi.id" target="_blank" class="company-link">kodingakademi.id</a></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-image-col">
+                <div class="logo-card">
+                    <img src="/assets/logo-koding-akademi.webp" alt="Logo Koding Akademi" class="company-logo-img">
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('prevZone').addEventListener('click', function() {
+            window.location.href = 'chapter-1.html';
+        });
+
+        document.getElementById('nextZone').addEventListener('click', function() {
+            window.location.href = 'chapter-1-2.html'; 
+        });
+    </script>
+</body>
+</html>

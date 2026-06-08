@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial Roblox Studio — Koding Akademi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="bg-decoration"></div>
+  <div class="corner-accent top-left"></div>
+  <div class="corner-accent bottom-right"></div>
+
+  <nav class="navbar">
+    <span class="navbar-identity">Muhamad Farhan Mubarak</span>
+  </nav>
+
+  <div class="nav-zone left" id="nav-left" title="Kembali"></div>
+  <div class="nav-zone right" id="nav-right" title=""></div>
+
+  <main class="page-wrapper report-page-wrapper">
+    <div class="report-container">
+
+      <h1 class="report-main-title">Tutorial Membuat Game di Roblox Studio</h1>
+      <p class="report-main-subtitle">Koding Akademi</p>
+
+      <div class="report-divider"></div>
+
+      <section class="report-section">
+        <h2 class="report-section-title">1. Memilih Template Classic Obby</h2>
+        <p class="report-section-desc">Langkah pertama adalah membuka Roblox Studio dan memilih template <strong>Classic
+            Obby</strong>. Template ini menyediakan kerangka dasar berupa lintasan rintangan (obstacle course) yang
+          sudah siap dimodifikasi, lengkap dengan titik spawn dan checkpoint dasar.</p>
+        <div class="report-img-wrapper" style="max-width: 350px;">
+          <img src="assets/gambar1.jpg" alt="Memilih Template Classic Obby" class="report-img">
+        </div>
+      </section>
+
+      <section class="report-section">
+        <h2 class="report-section-title">2. Mengenal Workspace Editor</h2>
+        <p class="report-section-desc">Setelah template terbuka, Anda akan melihat tampilan <strong>Workspace</strong>
+          utama Roblox Studio. Di sini terdapat seluruh desain lintasan permainan, panel <strong>Toolbox</strong> di
+          sisi kiri untuk mencari model siap pakai, serta <strong>Terrain Editor</strong> untuk mengelola medan
+          permainan.</p>
+        <div class="report-img-wrapper">
+          <img src="assets/gambar2.jpg" alt="Workspace Editor Roblox Studio" class="report-img">
+        </div>
+      </section>
+
+      <section class="report-section">
+        <h2 class="report-section-title">3. Menambahkan Part Baru</h2>
+        <p class="report-section-desc">Untuk membuat rintangan kustom, klik menu <strong>Part</strong> pada toolbar.
+          Terdapat beberapa tipe Part yang bisa dipilih: <strong>Block</strong> (balok), <strong>Sphere</strong> (bola),
+          <strong>Wedge</strong> (segitiga miring), <strong>Corner Wedge</strong>, dan <strong>Cylinder</strong>
+          (tabung). Part inilah yang menjadi fondasi dasar dari seluruh rintangan dalam game.
+        </p>
+        <div class="report-img-wrapper" style="max-width: 300px;">
+          <img src="assets/gambar3.jpg" alt="Menambahkan Part di Roblox Studio" class="report-img">
+        </div>
+      </section>
+
+      <section class="report-section">
+        <h2 class="report-section-title">4. Menggunakan Transform Tools</h2>
+        <p class="report-section-desc">Pindah ke tab <strong>MODEL</strong> untuk mengakses alat manipulasi objek.
+          Gunakan <strong>Select</strong>, <strong>Move</strong>, <strong>Scale</strong>, dan <strong>Rotate</strong>
+          untuk mengatur posisi dan ukuran Part. Aktifkan fitur <strong>Snapping</strong> agar pergerakan objek lebih
+          presisi, misalnya Rotate 45° dan Move 1 studs.</p>
+        <div class="report-img-wrapper">
+          <img src="assets/gambar4.jpg" alt="Transform Tools dan Snapping" class="report-img">
+        </div>
+      </section>
+
+      <section class="report-section">
+        <h2 class="report-section-title">5. Mengelola Objek di Explorer</h2>
+        <p class="report-section-desc">Panel <strong>Explorer</strong> di sisi kanan menampilkan hierarki seluruh objek
+          dalam game. Kelompokkan rintangan ke dalam folder yang rapi seperti <strong>Checkpoints</strong>,
+          <strong>Conveyors</strong>, <strong>KillBricks</strong>, <strong>ObbyStructure</strong>,
+          <strong>Trampolines</strong>, dan <strong>StartSpawn</strong>. Di toolbar atas, Anda juga bisa menggunakan
+          fitur <strong>Solid Modeling</strong> (Union, Intersect, Negate) untuk menggabungkan Part.
+        </p>
+        <div class="report-img-wrapper">
+          <img src="assets/gambar5.png" alt="Explorer Panel dan Solid Modeling" class="report-img">
+        </div>
+      </section>
+
+      <section class="report-section">
+        <h2 class="report-section-title">6. Mengubah Warna dan Material Part</h2>
+        <p class="report-section-desc">Klik Part yang ingin diwarnai, lalu buka <strong>Color Picker</strong> melalui
+          panel Properties. Anda bisa memilih warna dari palet dasar, memasukkan kode warna Hex secara manual, atau
+          menggunakan gradient picker untuk warna kustom. Selain warna, material Part juga bisa diubah menjadi
+          <strong>Plastic</strong>, <strong>Wood</strong>, <strong>Metal</strong>, dan lainnya.
+        </p>
+        <div class="report-img-wrapper">
+          <img src="assets/gambar7.png" alt="Color Picker di Roblox Studio" class="report-img">
+        </div>
+      </section>
+
+      <section class="report-section">
+        <h2 class="report-section-title">7. Menambahkan Objek via Insert Object</h2>
+        <p class="report-section-desc">Klik kanan pada <strong>Workspace</strong> di panel Explorer, lalu pilih
+          <strong>Insert Object</strong>. Di sini Anda bisa mencari dan menambahkan berbagai komponen seperti
+          <strong>Part</strong>, <strong>Script</strong>, <strong>Folder</strong>, <strong>SpawnLocation</strong>,
+          <strong>Model</strong>, serta komponen 3D Interfaces seperti <strong>ClickDetector</strong> dan
+          <strong>Decal</strong>.
+        </p>
+        <div class="report-img-wrapper" style="max-width: 450px;">
+          <img src="assets/gambar8.jpg" alt="Insert Object di Explorer" class="report-img">
+        </div>
+      </section>
+
+      <section class="report-section">
+        <h2 class="report-section-title">8. Menambahkan Sound Effect</h2>
+        <p class="report-section-desc">Untuk membuat game lebih interaktif, tambahkan efek suara melalui <strong>Insert
+            Object → Sound</strong>. Roblox Studio menyediakan berbagai jenis audio seperti <strong>Sound</strong>,
+          <strong>SoundGroup</strong>, serta efek audio lanjutan seperti <strong>ChorusSoundEffect</strong>,
+          <strong>EchoSoundEffect</strong>, <strong>ReverbSoundEffect</strong>, dan lainnya.
+        </p>
+        <div class="report-img-wrapper" style="max-width: 550px;">
+          <img src="assets/gambar9.png" alt="Insert Sound Object" class="report-img">
+        </div>
+      </section>
+
+      <section class="report-section">
+        <h2 class="report-section-title">9. Publish Game ke Roblox</h2>
+        <p class="report-section-desc">Setelah game selesai dibuat, buka menu <strong>FILE → Publish to Roblox</strong>
+          (shortcut <strong>Alt+P</strong>) untuk mengunggah game ke platform Roblox. Anda juga bisa menyimpan secara
+          lokal melalui <strong>Save to File</strong> atau langsung ke cloud Roblox.</p>
+        <div class="report-img-wrapper" style="max-width: 550px;">
+          <img src="assets/gambar10.png" alt="Publish to Roblox via FILE Menu" class="report-img">
+        </div>
+      </section>
+
+      <section class="report-section">
+        <h2 class="report-section-title">10. Mengisi Informasi Game</h2>
+        <p class="report-section-desc">Pada jendela <strong>Publish Game</strong>, isi nama game (contoh: "obby"),
+          deskripsi, pilih Creator, dan tentukan perangkat target (<strong>Computer</strong>, <strong>Tablet</strong>,
+          <strong>Phone</strong>, <strong>VR</strong>, atau <strong>Console</strong>). Aktifkan <strong>Team
+            Create</strong> jika ingin berkolaborasi dengan tim secara real-time melalui cloud.
+        </p>
+        <div class="report-img-wrapper" style="max-width: 550px;">
+          <img src="assets/gambar11.jpg" alt="Publish Game - Basic Info" class="report-img">
+        </div>
+      </section>
+
+      <section class="report-section">
+        <h2 class="report-section-title">11. Membuka Game Settings</h2>
+        <p class="report-section-desc">Setelah game dipublish, buka <strong>FILE → Game Settings</strong> untuk mengatur
+          pengaturan lanjutan seperti izin akses, monetisasi, lokalisasi bahasa, dan konfigurasi avatar pemain. Menu ini
+          juga menampilkan daftar <strong>Recent Games</strong> yang pernah Anda buat.</p>
+        <div class="report-img-wrapper" style="max-width: 450px;">
+          <img src="assets/gambar12.jpg" alt="Game Settings Menu" class="report-img">
+        </div>
+      </section>
+
+      <section class="report-section">
+        <h2 class="report-section-title">12. Mengatur Permissions & Playability</h2>
+        <p class="report-section-desc">Di dalam <strong>Game Settings → Permissions</strong>, atur siapa yang boleh
+          memainkan game Anda. Pilih <strong>Friends</strong> (hanya teman), <strong>Public</strong> (semua orang di
+          Roblox), atau <strong>Private</strong> (hanya developer). Setelah semua pengaturan selesai, klik
+          <strong>Save</strong> dan game Anda siap dimainkan!
+        </p>
+        <div class="report-img-wrapper" style="max-width: 550px;">
+          <img src="assets/gambar13.jpg" alt="Permissions dan Playability Settings" class="report-img">
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('nav-left').addEventListener('click', function () {
+      window.location.href = 'chapter-3-isi.html';
+    })
+    document.getElementById('nav-right').addEventListener('click', function () {
+      window.location.href = 'chapter-4.html';
+    });
+  </script>
+
+</body>
+
+</html>
